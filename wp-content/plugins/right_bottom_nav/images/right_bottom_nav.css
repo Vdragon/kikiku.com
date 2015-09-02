@@ -1,0 +1,76 @@
+#plugin_rbn{z-index:10;position:fixed;right:4px;bottom:0px;font:normal 12px/1.6em Tahoma;width:220px;max-width:220px;padding-bottom:24px;overflow:hidden;}
+#plugin_rbn label{display:inline;}
+#rbn_head .rbn_weather, #rbn_head .rbn_post_new, #rbn_head .rbn_post_random, #rbn_head .rbn_post_hot, #rbn_close, #rbn_close:hover, 
+#rbn_top_btn, #rbn_top_btn:hover, #rbn_bottom_btn, #rbn_bottom_btn:hover, #rbn_toggle_btn, #rbn_toggle_btn:hover, #rbn_toggle_btn.back, #rbn_toggle_btn.back:hover, 
+#right_bottom_nav .rbn_weather, #right_bottom_nav .rbn_weather:hover, #right_bottom_nav .rbn_weather.cur_rbn, 
+#right_bottom_nav .rbn_post_random, #right_bottom_nav .rbn_post_random:hover, #right_bottom_nav .rbn_post_random.cur_rbn, 
+#right_bottom_nav .rbn_post_new, #right_bottom_nav .rbn_post_new:hover, #right_bottom_nav .rbn_post_new.cur_rbn, 
+#right_bottom_nav .rbn_post_hot, #right_bottom_nav .rbn_post_hot:hover, #right_bottom_nav .rbn_post_hot.cur_rbn
+{background-image:url('rbn_bg_sprite.png');background-repeat:no-repeat;}
+#rbn_head_and_body{display:none;}
+#plugin_rbn ul,#plugin_rbn ol,#plugin_rbn li{margin:0;padding:0;list-style:none;}
+#rbn_head{
+position:relative;
+background:rgb(40,52,59); /* Old browsers */
+background:-moz-linear-gradient(top,  rgba(40,52,59,1) 0%, rgba(78,83,89,1) 27%, rgba(125,126,137,1) 100%); /* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,52,59,1)), color-stop(27%,rgba(78,83,89,1)), color-stop(100%,rgba(125,126,137,1))); /* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top,  rgba(40,52,59,1) 0%,rgba(78,83,89,1) 27%,rgba(125,126,137,1) 100%); /* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top,  rgba(40,52,59,1) 0%,rgba(78,83,89,1) 27%,rgba(125,126,137,1) 100%); /* Opera 11.10+ */
+background:-ms-linear-gradient(top,  rgba(40,52,59,1) 0%,rgba(78,83,89,1) 27%,rgba(125,126,137,1) 100%); /* IE10+ */
+background:linear-gradient(top,  rgba(40,52,59,1) 0%,rgba(78,83,89,1) 27%,rgba(125,126,137,1) 100%); /* W3C */
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#7d7e89',GradientType=0 ); /* IE6-9 */
+color:white;padding:4px;
+}
+#rbn_head>div{padding-left:30px;background-repeat:no-repeat !important;display:none;
+}
+#rbn_head div.cur_rbn{display:block;}
+#rbn_head .rbn_weather{background-position:0px -120px}#rbn_head .rbn_post_new{background-position:0px -216px}#rbn_head .rbn_post_random{background-position:0px -360px}#rbn_head .rbn_post_hot{background-position:0px -168px}
+#rbn_close{
+position:absolute;
+padding:0 !important; /* 勿删 */
+display:block !important; /* 勿删 */
+top:4px;right:4px;width:20px;height:20px;cursor:pointer;background-position: 0px -384px;}
+#rbn_close:hover{background-position: 0px -408px;}
+#rbn_body{
+position:relative;padding:4px 0;background: #28343b;
+background: -moz-linear-gradient(top,  #28343b 0%, #b5bdc8 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28343b), color-stop(100%,#b5bdc8));
+background: -webkit-linear-gradient(top,  #28343b 0%,#b5bdc8 100%);
+background: -o-linear-gradient(top,  #28343b 0%,#b5bdc8 100%);
+background: -ms-linear-gradient(top,  #28343b 0%,#b5bdc8 100%);
+background: linear-gradient(top,  #28343b 0%,#b5bdc8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#b5bdc8',GradientType=0 );
+overflow: hidden;
+}
+#rbn_body>div{margin:0 7px 0 7px;display:none;}
+#rbn_body>div.cur_rbn{/*salience*/}
+#rbn_body,#rbn_body a{color:white;text-decoration:none}#rbn_body a:hover{color:#FDD6BD;text-decoration:underline}##rbn_body iframe{width:210px;height:240px;overflow:hidden}#plugin_rbn .list_hot{overflow:hidden}#plugin_rbn .list_hot li{list-style:none;overflow:hidden;margin-top:4px;padding-top:4px;border-top:1px dashed #820B0B}#plugin_rbn .list_hot li:first-child{margin-top:0;border-top:none}#plugin_rbn .list_hot .img_wraper{float:left;width:80px;height:50px;max-width:80px;max-height:50px;border:1px solid #FFB9B8;padding:2px;text-align:center;vertical-align:middle}#plugin_rbn .list_hot img{max-width:80px;max-height:50px}#plugin_rbn .list_hot .post_info{float:left;margin-left:14px;width:100px}#plugin_rbn .list_hot .plink{font-size:14px}#plugin_rbn .list_hot .author{font-size:12px;color:#FEBDA6}#plugin_rbn .list_hot .ptime{font-size:10px;color:threedhighlight}#plugin_rbn .list_hot .pv_and_comment_num{font-size:12px;color:#FD0006}#plugin_rbn .list_new{}#plugin_rbn .list_new li{list-style:square;list-style-position:inside;}#plugin_rbn .list_rand{}#plugin_rbn .list_rand .ptime{display:inline;font-size:10px;color:#F99F2E;margin-left:7px}#plugin_rbn .list_weather table{width:100%;border-collapse:collapse;border:1px solid #ddd}#plugin_rbn .list_weather td{width:50%;padding:4px}#plugin_rbn .list_weather td:first-child{text-align:center}#plugin_rbn .list_weather img{max-width:70px;max-height:70px;margin-bottom:7px}#plugin_rbn .list_weather .weather_city{margin-bottom:7px;font-size:16px;font-weight:bold;color:#FF3D39}#plugin_rbn .list_weather .weather_date_data{font-size:14px;color:#FFDB96}#plugin_rbn .list_weather .weather_date{color:#F99F20;font-size:14px}#plugin_rbn .list_weather .temperature{font-size:14px;color:#ddd}
+#rbn_foot{
+position:absolute;bottom:0;right:0;height:20px;max-height:20px;
+background:rgb(181,189,200); /* Old browsers */
+background:-moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6+ */
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181,189,200,1)), color-stop(36%,rgba(130,140,149,1)), color-stop(100%,rgba(40,52,59,1))); /* Chrome,Safari4+ */
+background:-webkit-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10+,Safari5.1+ */
+background:-o-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Opera 11.10+ */
+background:-ms-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* IE10+ */
+background:linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C */
+*background:transparent;padding:2px 4px;
+}
+#rbn_foot>.left{float:left;display:none;margin-right:27px}#rbn_foot>.right{position:relative;float:right}#right_bottom_nav{overflow:hidden}#right_bottom_nav li{float:left;list-style:none;width:24px;height:20px;cursor:pointer;margin-left:7px;background-repeat:no-repeat !important}#right_bottom_nav li:first-child{margin-left:0 !important}#right_bottom_nav .rbn_weather{background-position:0px -96px}#right_bottom_nav .rbn_weather:hover,#right_bottom_nav .rbn_weather.cur_rbn{background-position:0px -120px}#right_bottom_nav .rbn_post_random{background-position:0px -336px}#right_bottom_nav .rbn_post_random:hover,#right_bottom_nav .rbn_post_random.cur_rbn{background-position:0px -360px}#right_bottom_nav .rbn_post_new{background-position:0px -192px}#right_bottom_nav .rbn_post_new:hover,#right_bottom_nav .rbn_post_new.cur_rbn{background-position:0px -216px}#right_bottom_nav .rbn_post_hot{background-position:0px -145px}#right_bottom_nav .rbn_post_hot:hover,#right_bottom_nav .rbn_post_hot.cur_rbn{background-position:0px -168px}#rbn_foot_right_menu{width:68px;overflow:hidden}#rbn_foot_right_menu li{float:left;width:20px;height:20px;cursor:pointer;margin-left:4px}#rbn_foot_right_menu li:first-child{margin-left:0 !important}#rbn_top_btn{display:inline;display:inline-block;background-position:0px -288px}#rbn_top_btn:hover{background-position:0px -240px}#rbn_bottom_btn{display:inline;display:inline-block;background-position:0px -312px}#rbn_bottom_btn:hover{background-position:0px -264px}#rbn_toggle_btn{display:inline;display:inline-block;background-position:0px 0px}#rbn_toggle_btn:hover{background-position:0px -24px}#rbn_toggle_btn.back{background-position:0px -48px}#rbn_toggle_btn.back:hover{background-position:0px -72px}
+#rbn_foot_tip{
+display:none;position:absolute;bottom:36px;left:36px;padding:0px 3px 0px 3px;
+
+background: #7d7e7d;
+background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e));
+background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%);
+background: -o-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%);
+background: -ms-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%);
+background: linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
+
+text-align:center;
+font-size:10px;
+color:white;
+display:none;
+}

@@ -1,0 +1,273 @@
+/*
+Theme Name:     the gallery Child
+Theme URI:      http: //www.yezin.cn/
+Description:    Child theme for the thegallery theme 
+Author:         yezin
+Author URI:     http: //www.yezin.cn/
+Template:       thegallery
+Version:        0.1.0
+*/
+
+@import url("../thegallery/style.css");
+
+body {
+	font-family: 'Microsoft JhengHei','微软正黑体',"Century Gothic",Verdana,Tahoma,Arial,Helvetica,sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .gdl-title{
+	font-family: 'Microsoft JhengHei','微软正黑体',"Century Gothic",Verdana,Tahoma,Arial,Helvetica,sans-serif;
+}
+
+h1.gdl-page-title{
+	line-hight: 170%;
+	text-shadow: 2px 2px 4px #B4ACAC;
+}
+
+/* #Theme Style
+================================================== */
+/* Single */
+/* 文字背景 */
+div.single-content p{ 
+text-shadow: 1px 1px 2px #7C7B7B; } 
+
+/*--- Top Navigation ---*/
+div.top-navigation-left{ height: 83px; }
+
+/* #Images
+================================================== */
+.single-content{font-size:14px;}
+.single-content p {line-height:28px;letter-spacing: 0.3px}
+img{display:inline;}
+div.blog-item-holder .blog-item .blog-thumbnail-title{ font-size: 19px;}
+#smilelink{cursor:pointer; width:465px;}
+
+.recent-post-widget-title a{font-size:13px !important;}
+.recent-post-widget-comment-num,.recent-post-widget-date{font-size:10px !important;}
+
+ol.comment-list .comment-avartar img{border-radius:5px;box-shadow: 1px 1px 1px #888888;}
+ol.comment-list > li > .comment-body{padding-bottom: 12px;}
+ol.comment-list > li ul.children li .comment-body{margin-top: 10px;padding-bottom: 10px;}
+ol.comment-list > li ul.children li .comment-avartar img{height:32px;width:32px;}
+span.comment-author {font-size: 13px;}
+
+/*正文结构条*/
+.single-content h3 {position: relative;
+left: -10px;
+color: #B1B1B1;
+background: #292929;
+padding: 0 10px;
+font-size: 13px;
+font-weight: bold;
+line-height: 24px;
+border-left:2px solid #ffbc2d;
+border-radius: 3px;
+box-shadow: 1px 1px 1px #888;}
+
+/* 首字 .post first-letter */
+.single-content.first-letter:first-letter{font-size:36px;font-weight:bold;font-family:"Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";}
+
+/*sina wei bo xiu*/
+#pl_weibo_show{background: #000;opacity: 0.7;}
+
+/* 评论表情 */
+.comment-content img.wp-smiley {
+	height: 16px !important;
+	width: 18px !important;
+	max-height: 18px !important;
+}
+/*	Blockquotes  */
+	.by_talk hr { border: dotted #353434; border-width: 1px 0 0; margin: 0; clear: both; height: 0; }
+/*自定义滚动条*/
+/* CSS Document 
+.clear:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0px;}
+.clear {*zoom:1;}
+.autoCenter {width:980px;margin:0 auto;font-size:12px;}
+.relative {position:relative;}
+.absolute {position:absolute;}
+.scroll {position:absolute;right:0;width:3px;background-color:#c5c5c5;min-height:10px;}
+.syntaxhighlighter {color:#646464;margin-top:10px;width:227px;height:115px;overflow:hidden;padding-right:10px;background:url(../images/scroll/bg.jpg) repeat-y right top;}
+.syntaxhighlighter table {width:224px;}
+.syntaxhighlighter td {height:24px;line-height:24px;text-indent:16px;}
+.syntaxhighlighter span {color:#2765d6;}*/
+
+
+/*修改主题为白色*/
+body .single-content, body .blog-thumbnail-context{
+	color: #000000 !important;
+}
+div.gdl-container-overlay{
+	opacity: 0.1 !important;
+}
+div.container-overlay{
+	background: #FFFFFF !important;
+	opacity: 0.979 !important;
+}
+.blog-item .post-title-color{
+	font-weight:500;
+	color: #E1AE14 !important;
+	position: relative;
+	left: 45px;
+}
+div.page-header-wrapper{
+	margin-top: 0 !important;
+	background-color: #14AEE1 !important;
+	border-bottom: none !important;
+	border-top: 3px solid #E24814 !important;
+}
+.blog-item .blog-thumbnail-image img{
+	/*修改/include/plugin/blog-item.php文件下的17行从根源修改大小*/
+	width: 590px !important;
+	height: 135px !important;
+	border: 5px solid #E7E7E7 !important;
+}
+.custom-sidebar .custom-sidebar-title.sidebar-title-color{
+	color: #FF3399 !important;
+}
+.right-sidebar-wrapper a, .left-sidebar-wrapper a{
+	color: #00B8B8 !important;
+}
+.by_talk li{
+	height: 32px !important;
+}
+.by_talk li div{
+	display: inline-block !important;
+	height: 16px !important;
+	overflow: hidden;
+}
+.by_talk li span{
+	float: right !important;
+	-webkit-transform: scale(0.75);
+	font-size: 9px !important;
+}
+.by_talk hr{
+	border: dotted #CCCCCC;
+	border-width: 1px 0 0;
+}
+div#blog-item-holder .blog-item{
+	width: 600px;
+	padding-top: 40px;
+	margin-bottom: 0px;
+	border-bottom: 1px dotted;
+	margin-left: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+div.blog-item-holder .blog-item:first-child{
+	/*padding-top: 20px;*/
+}
+div.blog-item-holder .blog-item:hover{
+	/*background-color: #F9F9F9;*/
+}
+div.custom-sidebar .recent-post-widget-comment-num{
+	/*-webkit-transform: scale(0.75);
+	font-size: 10px !important;
+	color: #CCCCCC;*/
+	font-family: Consolas,'Microsoft JhengHei','微软正黑体',"Century Gothic",Verdana,Tahoma,Arial,Helvetica,sans-serif;
+	font-style: normal;
+}
+div.custom-sidebar form #search-text input[type="text"]{
+	background-color: #FFFFFF !important;
+}
+div.comment-wrapper #respond{
+	background-color: #E0E0E0;
+	padding: 20px !important;
+}
+.gdl-page-item div.about-author-wrapper{
+	background-color: #FFFFFF !important;
+	border: 5px solid #E0E0E0 !important;
+}
+.gdl-page-item div.about-author-wrapper .about-author-info{
+	color: #858585 !important;
+}
+.gdl-page-item div.about-author-wrapper .about-author-title{
+	color: #5E5E5E !important;
+}
+div.comment-wrapper textarea, div.comment-wrapper input[type="text"]{
+	background-color: #FFFFFF !important;
+}
+
+.comment-list .comment .comment-context .comment-content{
+	color: #858585 !important;
+}
+.comment-list .comment .comment-context .comment-head .comment-author{
+	color: #8D8A86 !important;
+}
+.comment-list .comment .comment-body{
+	border-color: #EDEDED !important;
+}
+
+div.single-content p{ 
+text-shadow: 1px 1px 1px #E8E8E8; } 
+
+.single-content h3{
+	color: #000000 !important;
+	background: #FFFFFF;
+	box-shadow: 1px 1px 1px #CCCCCC;
+	border-left:3px solid #FF3399;
+}
+.single-content h4 {
+	position: relative;
+	left: -5px;
+	width: 96.2%;
+	color: #000000 !important;
+	background: #FFFFFF;
+	padding: 0 10px;
+	font-size: 13px;
+	font-weight: 900;
+	line-height: 24px;
+	border-left:2px solid #00B8BE;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px #CCCCCC;
+}
+div.pagination a{
+	color: #8D8A86;
+}
+#blog-item-holder .post_type_label{
+	color: #FFFFFF;
+    position: absolute;
+	top: 27px;
+	left: -18px;
+	width: 69px;
+	height: 36px;
+	border-radius: 0px 18px 180px 0px;
+	line-height: 36px;
+	font-family: Verdana;
+	letter-spacing: -1.6px;
+	text-transform: uppercase;
+	/*font-weight: bold;*/
+	font-size: 21px;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+#blog-item-holder .post_type_label.is_odd{
+	background-color: #FF2E70;
+}
+#blog-item-holder .post_type_label.is_event{
+	background-color: #14AEE1;
+}
+#blog-item-holder .post_type_label .post_type_label_d{
+	position: relative;
+	top: -5px;
+	font-size: 21px;
+}
+#blog-item-holder .post_type_label .post_type_label_m{
+	position: relative;
+	top: 3px;
+	font-size: 12px;
+}
+#blog-item-holder .post_type_label .post_type_label_spacer{
+	font-size: 29px;
+	font-weight: 500;
+}
+div.pagination a {
+  color: #8D8A86 !important;
+}
+div.blog-item-holder .blog-item .blog-thumbnail-comment{
+	background: none !important;
+}
+div.blog-item-holder .blog-item .blog-thumbnail-comment a{
+	background: url('../thegallery/images/icon/dark/comment.png') no-repeat 0px 3px;
+	padding-left: 15px;
+	text-align: left;
+	min-width: 17px;
+	display: block;
+}

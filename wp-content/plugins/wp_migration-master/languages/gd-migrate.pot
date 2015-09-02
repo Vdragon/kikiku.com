@@ -1,0 +1,168 @@
+# Copyright (C) 2014 Managed WordPress Migration
+# This file is distributed under the same license as the Managed WordPress Migration package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Managed WordPress Migration 1.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/gd-migrate\n"
+"POT-Creation-Date: 2014-05-16 21:22:41+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: classes/db-backup.php:71
+msgid "Creating backup file..."
+msgstr ""
+
+#: classes/db-backup.php:74
+msgid "Finished backing up table \\\"%s\\\"."
+msgstr ""
+
+#: classes/db-backup.php:76
+msgid "Backing up table \\\"%s\\\"..."
+msgstr ""
+
+#: classes/db-backup.php:83
+msgid "Could not open the backup file for writing!"
+msgstr ""
+
+#: classes/db-backup.php:84
+msgid ""
+"The backup file could not be saved.  Please check the permissions for "
+"writing to your backup directory and try again."
+msgstr ""
+
+#: classes/db-backup.php:88 classes/db-backup.php:375
+msgid "WordPress MySQL database backup"
+msgstr ""
+
+#: classes/db-backup.php:109
+msgid ""
+"The backup directory is not writeable!  Please check the permissions for "
+"writing to your backup directory and try again."
+msgstr ""
+
+#: classes/db-backup.php:168
+msgid "There was an error writing a line to the backup script:"
+msgstr ""
+
+#: classes/db-backup.php:192
+msgid "Error getting table details"
+msgstr ""
+
+#: classes/db-backup.php:211
+msgid "Table: %s"
+msgstr ""
+
+#: classes/db-backup.php:223
+msgid "Delete any existing table %s"
+msgstr ""
+
+#: classes/db-backup.php:232
+msgid "Table structure of table %s"
+msgstr ""
+
+#: classes/db-backup.php:238
+msgid "Error with SHOW CREATE TABLE for %s."
+msgstr ""
+
+#: classes/db-backup.php:245
+msgid "Error getting table structure of %s"
+msgstr ""
+
+#: classes/db-backup.php:253
+msgid "Data contents of table %s"
+msgstr ""
+
+#: classes/db-backup.php:319
+msgid "End of data contents of table %s"
+msgstr ""
+
+#: classes/db-backup.php:377
+msgid "Generated: %s"
+msgstr ""
+
+#: classes/db-backup.php:378
+msgid "Hostname: %s"
+msgstr ""
+
+#: classes/db-backup.php:379
+msgid "Database: %s"
+msgstr ""
+
+#: classes/db-backup.php:514
+msgid "File not found:%s"
+msgstr ""
+
+#: classes/db-backup.php:514
+msgid "Return to Backup"
+msgstr ""
+
+#: classes/db-backup.php:540
+msgid "Cheatin' uh ?"
+msgstr ""
+
+#: classes/plugin.php:107
+msgid "Managed WordPress Migration User"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:39
+msgid "We require the PHP5 function <code>stream_get_contents()</code>"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:50
+msgid "SSH2 hostname is required"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:62
+msgid "SSH2 username is required"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:70
+msgid "SSH2 password is required"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:82
+msgid "Failed to connect to SSH2 Server %1$s:%2$s"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:88
+msgid "Username/Password incorrect for %s"
+msgstr ""
+
+#: classes/ssh2/class-wp-filesystem-ssh2.php:98
+msgid "Private key incorrect for %s"
+msgstr ""
+
+#: classes/version-check.php:42
+msgid ""
+"The Managed WordPress Migration plugin requires WordPress 3.0 or higher. "
+"Update your WordPress install and try again."
+msgstr ""
+
+#: classes/version-check.php:45
+msgid ""
+"The Managed WordPress Migration plugin doesn’t support multi-site WordPress "
+"installs yet. If you’re migrating multiple sites, contact support for help."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Managed WordPress Migration"
+msgstr ""
+
+#. #-#-#-#-#  gd-migrate.pot (Managed WordPress Migration 1.2)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  gd-migrate.pot (Managed WordPress Migration 1.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.starfieldtech.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin helps move your site to the Managed WordPress platform"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Starfield Technologies"
+msgstr ""

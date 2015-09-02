@@ -1,0 +1,190 @@
+显卡：(1599)影驰GTX 560 Ti 名人堂 4热管银河战舰高频 玩家版显卡 现货包邮
+	http://detail.tmall.com/item.htm?id=13254585013&prt=1322843519620&prc=1
+		品牌: 影驰
+		影驰: GTX560TI名人堂
+		售后服务: 全国联保
+		显存容量: 1G
+		芯片: nVIDIA
+		显示芯片制程: 40纳米
+		接口标准: PCI Express 2.0 16X
+		显存位宽: 256bit
+		显存类型: GDDR5
+		显卡芯片型号: GTX560ti
+		成色: 全新
+	 (1699)盈通R6950-2048GD5 游戏高手 HD6950 2G 显卡正品行货
+	http://item.taobao.com/item.htm?id=10470383653
+		品牌: 盈通
+		盈通: 其它盈通历史型号
+		售后服务: 全国联保
+		渲染管线: 其它
+		显存容量: 2G
+		芯片: AMD显示芯片
+		制程: 40纳米接口
+		标准: PCI Express 2.0 16X
+		输出接口: minidisplayport DVI*2 HDMI
+		显存位宽: 256bit
+		显存类型: GDDR5
+		显卡芯片型号: 其它显卡芯片系列
+
+电源：(395)振华雪蝶550W（SF-550P14XP(BK)）
+	http://item.taobao.com/item.htm?id=14188408657
+
+主板：1.(699)新锐科技★华硕P8Z68-V LX B3版主板
+	http://item.taobao.com/item.htm?id=9546629590
+	板芯片
+		集成芯片	声卡/网卡
+		芯片厂商	Intel
+		主芯片组	Intel Z68
+		芯片组描述	采用Intel Z68芯片组
+		音频芯片	集成Realtek 音效芯片
+		网卡芯片	板载Realtek 千兆网卡
+		处理器规格
+		CPU平台	Intel
+		CPU类型	Core i7/Core i5/Core i3
+		CPU插槽	LGA 1155
+		CPU描述	支持Intel 32nm CPU
+		支持CPU数量	1颗
+		主板总线	支持Turbo Boost2.0技术
+	内存规格
+		内存类型	DDR3
+		内存插槽	4×DDR3 DIMM
+		最大内存容量	32GB
+		内存描述	支持双通道DDR3 2200(超频)/2133(超频)/1866(超频)/1600/1333/1066MHz内存
+	扩展插槽
+		PCI-E插槽	2×PCI-E X16显卡插槽2×PCI-E X1插槽
+		PCI插槽	3×PCI插槽
+		SATA接口	4×SATA II接口；2×SATA III接口
+	I/O接口
+		USB接口	12×USB2.0接口（8内置+4背板）；2×USB3.0接口（背板）
+		HDMI接口	1×HDMI接口
+		外接端口	1×VGA接口1×DVI接口
+		PS/2接口	PS/2键盘接口
+		其它接口	1×RJ45网络接口 1×光纤接口音频接口
+	板型
+		主板板型	ATX板型
+		外形尺寸	30.5×22.9cm
+	软体管理
+		BIOS性能	64Mb Flash ROM，EFI AMI BIOS，PnP，DMI2.0，WfM2.0，SM BIOS 2.5，ACPI 2.0a，多国语言BIOS，ASUS EZ Flash 2，ASUS CrashFree BIOS 3，F12 PrintScreen Function
+		电源管理	WfM 2.0，DMI 2.0，网络唤醒功能（WOL by PME），调制解调器唤醒功能（WOR by PME），PXE
+	其它参数
+		多显卡技术	支持AMD Quad-GPU CrossFireX技术
+		电源插口	一个8针，一个24针电源接口
+		供电模式	4+2相
+		RAID功能	支持RAID 0，1，5，10
+    主板附件
+		包装清单	华硕主板 x1使用手册 x1I/O挡板 xSATA 数据线 x2
+		可选配件	随机光盘
+	保修信息
+		保修政策	全国联保，享受三包服务
+		质保时间	3年
+     2.(815)新锐科技★ASUS华硕P8P67 B3步进主板
+	http://item.taobao.com/item.htm?id=8768793352
+	主板芯片
+		集成芯片	声卡/网卡
+		芯片厂商	Intel
+		主芯片组	Intel P67
+		芯片组描述	采用Intel P67芯片组
+		显示芯片	无
+		音频芯片	集成8声道音效芯片
+		网卡芯片	板载千兆网卡
+	处理器规格
+		CPU平台	Intel
+		CPU插槽	LGA 1155
+		支持CPU数量	1颗
+	内存规格
+		内存类型	DDR3
+		内存插槽	4×DDR3 DIMM
+	主板规格
+		主板供电	12+2相
+		PS/2接口	PS/2鼠标，PS/2键盘接口
+		其它接口	1个光纤接口，IEEE 1394接口，千兆网络接口
+	I/O接口
+		USB接口	6个USB 2.0接口，2个USB 3.0接口
+	其它参数
+		电源插口	一个8针，一个24针电源接口
+	保修信息
+		保修政策	全国联保，享受三包服务
+		质保时间	3年
+
+内存：(120)【山东代理】三星金条DDR3 1333 4G台式机内存条包超2133 100%正品行货
+	http://item.taobao.com/item.htm?id=12919167176
+		内存容量: 4G
+		适用机型: 台式机
+		传输类型: DDR3 1333
+		接口类型: 240PIN内存
+		电压: 1.5V
+		颗粒封装: FBGA
+		内存工作频率: 1333MHZ
+		成色: 全新
+		品牌: Samsung/三星
+		型号: 4G DDR3 1600(金条)
+		售后服务: 全国联保
+
+CPU ：(1365)Intel Xeon E3-1230散片 3.2G 8M缓存 四核正式版CPU 秒杀I7-2600(接口类型: LGA 1155)完美兼容H61,H67,P67,Z68的PC台式机主板
+	http://item.taobao.com/item.htm?id=12704269325
+		型号:     至强E3-1230
+		CPU主频:  3.0GHz以上
+		接口类型: LGA 1155
+		包装形式: 散片
+		制程:     32纳米
+		成色:     全新
+		上市时间: 2011年
+		品牌:     Intel/英特尔Intel
+		CPU内核   Sandy Bridge
+		CPU架构   64位
+		核心数量	  四核心
+		工作功率	  80W
+		制作工艺	  32纳米
+		线程数量	  8
+		主频	  200MHz
+		最大Turbo频率 3600MHz
+		总线类型	  DMI总线
+		总线频率	  5GT/s
+		倍频（倍） 32
+		插槽类型	  LGA 1155
+		针脚数	  1155 pin
+		L3缓存	  8MB
+		指令集	  SSE4.1，4.2，AVX
+		超线程技术 支持
+		虚拟化技术 Intel VT
+		最大支持内存容量	32GB
+	
+显示器：(699)飞利浦显示器196E3LSB 19寸LED屏液晶显示器 完美+包邮+限时特价
+	http://item.taobao.com/item.htm?id=9018651110
+	    (1778)戴尔（DELL）UltraSharp U2412M 24英寸宽屏LED背光IPS液晶显示器
+	http://www.360buy.com/product/493442.html
+	http://item.taobao.com/item.htm?id=12490060565&_u=3f1tvvrf14c
+
+硬盘：(968)希捷MomentusXT 2.5寸笔记本硬盘500GB固态混合(4G SSD+500G HHD)
+	    http://detail.tmall.com/item.htm?id=9440779973&prt=1322848552608&prc=1
+		
+		(7140)
+
+		
+		
+		
+		
+ABFTSAAEQeJjfYEK
+public class Person {
+	public String name;
+	public int age;
+	public Person(String name,int age){
+		this.name = name;
+		this.age = age;
+	}
+	public boolean equals(Object o){
+		boolean temp = true;
+		//声明对象P
+		Person p1 = this;
+		if(o instanceof Person){
+			//向下转型
+			Point p2 = (Person)o;
+			if(!(p1.name.equals(p2.age)&&p1.age==p2.age)){
+				temp = false;
+			}
+		}else{
+			temp =false;
+		}
+		return temp;
+	}
+}

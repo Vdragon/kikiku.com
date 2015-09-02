@@ -1,0 +1,269 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Arabic"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Bulgarian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Catalan"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Category"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Choose whether to show the search panel in post"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Croatian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Czech"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Danish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Donation"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Dutch"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "English"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Filipino"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Finnish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "French"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "German"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Greek"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hebrew"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hindi"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hungarian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Indonesian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Italian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Japanese"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Korean"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Language"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Latvian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Lithuanian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Loading"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Norwegian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Option"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Please donate for continue developing and supporting the plugin."
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Please insert a valid google search engine ID."
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Polish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Portuguese"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Romanian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Russian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Save Options »"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Search String"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Serbian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Slovak"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Slovenian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Spanish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Swedish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Thai"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Theme"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Turkish"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Ukrainian"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Vietnamese"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Visit the plugin website"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "WP Custom Google Search - Options"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Web Property ID:"
+msgstr ""
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "You should set up a search string to show specific results. If you leave the field empty then the search will be based on post tags."
+msgstr ""

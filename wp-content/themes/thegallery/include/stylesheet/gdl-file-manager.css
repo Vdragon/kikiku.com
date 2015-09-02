@@ -1,0 +1,44 @@
+#file-manager-panel-wrapper{ max-width: 800px; margin-top: 50px; margin-right: 25px; }
+
+div.cwd-wrapper{ overflow: hidden;  }
+div.el-finder-galdb{ border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; position: relative; padding-top: 20px; }
+div.el-finder-galdb.el-finder-disabled{ opacity:0.35; filter:Alpha(Opacity=35); }
+div.el-finder-cwd{ padding-top: 10px !important; }
+
+/* submit bottom */
+input.galdb-set-form-submit{ 
+	width: 25px; height: 25px; cursor: pointer; border: 0px !important;
+	margin: 162px !important; margin-bottom: 20px !important; margin-top: 0px !important;
+	
+	background: url('../images/save-gdldb.png'); }
+
+/* set title */
+div.galdb-set-title-wrapper{ color: #898989; padding: 20px; padding-top: 0px; }
+div.galdb-set-title-label{ font-weight: bold; float: left; margin-right: 12px; line-height: 25px; width: 130px; }
+input.galdb-set-title-input{ float: left; padding: 2px !important;  margin-right: 5px !important; width: 123px !important; }
+
+/* set description */
+div.galdb-set-description-wrapper{ color: #898989; padding: 20px; padding-top: 0px; }
+div.galdb-set-description-label{ font-weight: bold; float: left; margin-right: 12px; line-height: 25px; width: 130px; }
+textarea.galdb-set-description-input{ 
+	float: left; padding: 2px !important;  margin-right: 5px !important; margin-left: 0px;
+	outline: none; border: 1px solid #CCC; }
+
+/* set thumbnail */
+div.galdb-set-thumbnail-wrapper{ color: #898989; padding: 20px; padding-top: 0px; }
+div.galdb-set-thumbnail-label{ font-weight: bold; float: left; margin-right: 12px; line-height: 25px; width: 130px; }
+input.galdb-set-thumbnail-input{ float: left; padding: 2px !important; margin-right: 5px !important; width: 123px !important; }
+input.galdb-set-thumbnail-upload{ float: left; width: 24px !important; height: 24px !important;  }
+
+/* setting */
+div.galdb-set-setting-wrapper{ color: #898989; padding: 20px; padding-top: 0px; }
+div.galdb-set-setting-label{ font-weight: bold; float: left; margin-right: 12px; line-height: 25px; width: 130px; }
+select.galdb-set-setting-input{ float: left; padding: 2px !important;  margin-right: 5px !important; }
+	
+/* now loading */
+div.el-finder-disabled .galdb-now-loading{ z-index: 1; }	
+div.galdb-now-loading{ 
+	position: absolute; top: 0; left: 0; bottom: 0; right: 0; z-index: -1; }
+div.galdb-now-loading.onload{ 
+	background: url('../images/loading2.gif') 99% 10px no-repeat; z-index: 1; 
+	background-color: #fff; opacity:0.65; filter:Alpha(Opacity=65); }	

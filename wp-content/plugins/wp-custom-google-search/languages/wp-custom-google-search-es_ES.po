@@ -1,0 +1,276 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: SIH <ivan_ra10@hotmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Arabic"
+msgstr "Árabe"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Bulgarian"
+msgstr "Búlgaro"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Catalan"
+msgstr "Catalán"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Category"
+msgstr "Categoría"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Chinese (Simplified)"
+msgstr "Chino (Simplificado)"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Chinese (Traditional)"
+msgstr "Chino (Tradicional)"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Choose whether to show the search panel in post"
+msgstr "Selecciona si quieres mostrar el panel de búsqueda en el post"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Croatian"
+msgstr "Croata"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Czech"
+msgstr "Checo"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Danish"
+msgstr "Danés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Donation"
+msgstr "Donacion"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Dutch"
+msgstr "Holandés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "English"
+msgstr "Inglés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Filipino"
+msgstr "Filipino"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Finnish"
+msgstr "Finlandés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "French"
+msgstr "Francés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "German"
+msgstr "Alemán"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Greek"
+msgstr "Griego"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hebrew"
+msgstr "Hebreo"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hindi"
+msgstr "Indú"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Hungarian"
+msgstr "Húngaro"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Indonesian"
+msgstr "Indonesio"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Italian"
+msgstr "Italiano"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Japanese"
+msgstr "Japonés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Korean"
+msgstr "Coreano"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Language"
+msgstr "Idioma"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Latvian"
+msgstr "Letón"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Lithuanian"
+msgstr "Lituano"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Loading"
+msgstr "Cargando"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Norwegian"
+msgstr "Noruego"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Option"
+msgstr "Opción"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Please donate for continue developing and supporting the plugin."
+msgstr "Por favor dona para continuar desarrollando y dar soporte al plugin."
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Please insert a valid google search engine ID."
+msgstr "Por favor agrega un ID del motór de búsqueda de google que sea válido"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Polish"
+msgstr "Polaco"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Portuguese"
+msgstr "Portugués"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Romanian"
+msgstr "Rumano"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Russian"
+msgstr "Ruso"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Save Options »"
+msgstr "Guardar Opciones"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Search String"
+msgstr "Cadena de Búsqueda"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Serbian"
+msgstr "Serbio"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Slovak"
+msgstr "Eslovaco"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Slovenian"
+msgstr "Esloveno"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Spanish"
+msgstr "Español"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Swedish"
+msgstr "Sueco"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Thai"
+msgstr "Tailandés"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Theme"
+msgstr "Tema"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Turkish"
+msgstr "Turco"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Ukrainian"
+msgstr "Ucranio"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Visit the plugin website"
+msgstr "Visita la página web del plugin"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "WP Custom Google Search - Options"
+msgstr "WP Custom Google Search - Opciones"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "Web Property ID:"
+msgstr "Web Property ID:"
+
+#. Text in function
+#: CustomGoogleSearchOptions.php:1
+msgid "You should set up a search string to show specific results. If you leave the field empty then the search will be based on post tags."
+msgstr "Debes configurar una cadena de búsqueda para mostrar los resultados deseados. Si dejas el campo en blanco entonces la búsqueda será determinada por las etiquetas de la entrada."
+
