@@ -1,2 +1,0 @@
-# kikiku.com
-kikiku.com
