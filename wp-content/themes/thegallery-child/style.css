@@ -51,7 +51,7 @@ span.comment-author {font-size: 13px;}
 
 /*正文结构条*/
 .single-content h3 {position: relative;
-left: -10px;
+left: -13px;
 color: #B1B1B1;
 background: #292929;
 padding: 0 10px;
@@ -220,6 +220,30 @@ text-shadow: 1px 1px 1px #E8E8E8; }
 	border-left:2px solid #00B8BE;
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px #CCCCCC;
+}
+.single-content h3 + p,
+.single-content h3 + p + p,
+.single-content h3 + p + p + p,
+.single-content h3 + p + p + p + p,
+.single-content h3 + p + p + p + p + p,
+.single-content h3 + p + p + p + p + p + p,
+.single-content h3 + p + p + p + p + p + p + p,
+.single-content h3 + p + p + p + p + p + p + p + p,
+.single-content h3 + p + p + p + p + p + p + p + p + p,
+.single-content h3 + p + p + p + p + p + p + p + p + p + p{
+	padding-left: 5px;
+}
+.single-content h4 + p,
+.single-content h4 + p + p,
+.single-content h4 + p + p + p,
+.single-content h4 + p + p + p + p,
+.single-content h4 + p + p + p + p + p,
+.single-content h4 + p + p + p + p + p + p,
+.single-content h4 + p + p + p + p + p + p + p,
+.single-content h4 + p + p + p + p + p + p + p + p,
+.single-content h4 + p + p + p + p + p + p + p + p + p,
+.single-content h4 + p + p + p + p + p + p + p + p + p + p{
+	padding-left: 10px;
 }
 div.pagination a{
 	color: #8D8A86;
