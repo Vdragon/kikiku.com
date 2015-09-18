@@ -97,9 +97,10 @@ body .single-content, body .blog-thumbnail-context{
 div.gdl-container-overlay{
 	opacity: 0.1 !important;
 }
-div.container-overlay{
+div.container div.container-overlay{
 	background: #FFFFFF !important;
 	opacity: 0.979 !important;
+	overflow: visible !important;
 }
 .blog-item .post-title-color{
 	font-weight:500;
