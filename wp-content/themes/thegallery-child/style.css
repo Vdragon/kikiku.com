@@ -97,10 +97,12 @@ body .single-content, body .blog-thumbnail-context{
 div.gdl-container-overlay{
 	opacity: 0.1 !important;
 }
-div.container div.container-overlay{
+div.container{
+	overflow: visible !important;
+}
+div.container-overlay{
 	background: #FFFFFF !important;
 	opacity: 0.979 !important;
-	overflow: visible !important;
 }
 .blog-item .post-title-color{
 	font-weight:500;
@@ -238,6 +240,7 @@ div.pagination a{
 	font-size: 21px;
 	vertical-align: middle;
 	padding-left: 5px;
+	box-shadow: 1px 1px 1px #CCCCCC;
 }
 #blog-item-holder .post_type_label.is_odd{
 	background-color: #FF2E70;
