@@ -229,9 +229,9 @@ div.pagination a{
     position: absolute;
 	top: 27px;
 	left: -18px;
-	width: 69px;
+	width: 62px;
 	height: 36px;
-	border-radius: 0px 18px 180px 0px;
+	border-radius: 0px 100px 100px 0px;
 	line-height: 36px;
 	font-family: Verdana;
 	letter-spacing: -1.6px;
@@ -256,6 +256,7 @@ div.pagination a{
 #blog-item-holder .post_type_label .post_type_label_m{
 	position: relative;
 	top: 3px;
+	left: -5px;
 	font-size: 12px;
 }
 #blog-item-holder .post_type_label .post_type_label_spacer{
