@@ -17,10 +17,10 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             NGG_BASIC_SINGLEPIC,
             'NextGen Basic Singlepic',
             'Provides a singlepic gallery for NextGEN Gallery',
-            '0.11',
-            'http://www.photocrati.com',
+            '0.14',
+            'https://www.imagely.com',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Basic_SinglePic_Installer');
@@ -56,7 +56,8 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             );
         }
 
-        if (!is_admin()) {
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+        {
             // Provides settings fields and frontend rendering
             $this->get_registry()->add_adapter(
                 'I_Display_Type_Controller',
@@ -68,7 +69,9 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
 
 	function _register_hooks()
 	{
-        if (!is_admin() && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES)) {
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
+        {
             C_NextGen_Shortcode_Manager::add('singlepic', array(&$this, 'render_singlepic'));
             C_NextGen_Shortcode_Manager::add('nggsinglepic', array(&$this, 'render_singlepic'));
 
@@ -89,7 +92,9 @@ class M_NextGen_Basic_Singlepic extends C_Base_Module
             $router = C_Router::get_instance();
             wp_enqueue_style(
                 'nextgen_basic_singlepic_style',
-                $router->get_static_url(NGG_BASIC_SINGLEPIC . '#nextgen_basic_singlepic.css')
+                $router->get_static_url(NGG_BASIC_SINGLEPIC . '#nextgen_basic_singlepic.css'),
+                FALSE,
+                NGG_SCRIPT_VERSION
             );
         }
 
@@ -141,8 +146,14 @@ class C_NextGen_Basic_SinglePic_Installer extends C_Gallery_Display_Installer
 				'entity_types'			=>	array('image'),
 				'preview_image_relpath'	=>	'photocrati-nextgen_basic_singlepic#preview.gif',
 				'default_source'		=>	'galleries',
-				'view_order' => NGG_DISPLAY_PRIORITY_BASE + 60,
-				'hidden_from_ui'        =>  TRUE
+				'view_order'            => NGG_DISPLAY_PRIORITY_BASE + 60,
+				'hidden_from_ui'        =>  TRUE, // todo remove this, use hidden_from_igw instead
+                'hidden_from_igw'       =>  TRUE,
+                'aliases'               =>  array(
+                    'basic_singlepic',
+                    'singlepic',
+                    'nextgen_basic_singlepic'
+                )
 			));
 	}
 }

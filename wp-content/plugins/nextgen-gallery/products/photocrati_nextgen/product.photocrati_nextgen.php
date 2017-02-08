@@ -37,7 +37,6 @@ class P_Photocrati_NextGen extends C_Base_Product
 
 		// Front-end only
 		'photocrati-dynamic_stylesheet'         =>  'frontend',
-		'photocrati-mediarss'                   =>  'frontend',
 
 		// Backend-only
 		'photocrati-nextgen_pro_upgrade'        =>  'backend',
@@ -53,7 +52,7 @@ class P_Photocrati_NextGen extends C_Base_Product
 		'photocrati-widget'                     =>  'always',
 		'photocrati-third_party_compat'         =>  'always',
 		'photocrati-nextgen_xmlrpc'             =>  'always',
-		'photocrati-wpcli'                      =>  'other',
+		'photocrati-wpcli'                      =>  'always'
 	);
 
 	function get_modules_provided()
@@ -71,17 +70,17 @@ class P_Photocrati_NextGen extends C_Base_Product
 					$retval[] = $module_name;
 					break;
 				case 'backend':
-					if (is_admin())  $retval[] = $module_name;
+					if (is_admin())
+						$retval[] = $module_name;
 					break;
 				case 'frontend':
-					if (!is_admin()) $retval[] = $module_name;
-					break;
-				case 'other':
-					if ($module_name == 'photocrati-wpcli' && defined('WP_CLI') && WP_CLI)
-						$retval[] = 'photocrati-wpcli';
+					if (!is_admin())
+						$retval[] = $module_name;
 					break;
 			}
 		}
+
+		$retval = apply_filters('ngg_get_modules_to_load', $retval, self::$modules_provided);
 
 		return $retval;
 	}
@@ -90,12 +89,12 @@ class P_Photocrati_NextGen extends C_Base_Product
 	{
 		parent::define(
 			'photocrati-nextgen',
-			'Photocrati NextGEN',
-			'Photocrati NextGEN',
+			'NextGen Gallery',
+			'NextGen Gallery',
             NGG_PLUGIN_VERSION,
-			'http://www.nextgen-gallery.com',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 
 		$module_path = implode(DIRECTORY_SEPARATOR, array(dirname(__FILE__), 'modules'));

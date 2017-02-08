@@ -1,10 +1,5 @@
 <?php
 
-/***
-{
-Module: photocrati-wpcli
-}
- ***/
 class M_WPCLI extends C_Base_Module
 {
     function define()
@@ -13,10 +8,10 @@ class M_WPCLI extends C_Base_Module
             'photocrati-wpcli',
             'WP-CLI Integration',
             "Provides additional commands for WP-CLI (https://github.com/wp-cli/wp-cli",
-            '0.1',
-            'http://www.nextgen-gallery.com',
+            '0.2',
+            'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
     }
 
@@ -33,7 +28,7 @@ class M_WPCLI extends C_Base_Module
 
 new M_WPCLI();
 
-if (class_exists('WP_CLI_Command')) {
+if (defined('WP_CLI') && WP_CLI && class_exists('WP_CLI_Command', FALSE)) {
     /**
      * Manage NextGen Gallery
      */

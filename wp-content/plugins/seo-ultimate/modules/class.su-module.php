@@ -378,7 +378,11 @@ class SU_Module {
 	 * 
 	 * @since 6.0
 	 */
-	function admin_page_init() { }
+	function admin_page_init() {
+
+		add_filter( 'admin_body_class', 'su_add_admin_body_class' );
+	
+	}
 	
 	/**
 	 * Is called at WordPress' admin_init hook when the post editor is loaded.
@@ -1137,12 +1141,13 @@ class SU_Module {
 		echo "\n<div class='su-meta-edit-table'>\n";
 		
 		$page_links = paginate_links( array(
-			  'base' => esc_url( add_query_arg( $type . '_paged', '%#%' ) ) . '#' . $tab
+			  'base' => html_entity_decode( esc_url( add_query_arg( $type . '_paged', '%#%' ) ) ) . '#' . $tab
 			, 'format' => ''
 			, 'prev_text' => __('&laquo;')
 			, 'next_text' => __('&raquo;')
 			, 'total' => $num_pages
 			, 'current' => $pagenum
+			, 'add_args' => false
 		));
 		
 		if ( $page_links ) {
@@ -1201,7 +1206,7 @@ class SU_Module {
 						$view_url = get_term_link($id, $type);
 					}
 					else{
-						$id = intval($object->term_taxonomy_id);
+						$id = intval($object->term_id);
 						$view_url = get_term_link(intval($object->term_id), $type);
 					}
 					$name = $object->name;
@@ -3067,7 +3072,7 @@ class SU_Module {
 			</div>
 			<div id="sdf-promo-carousel"></div>
 			<p>Remove these ads?<br />
-			<a href="https://seoultimateplus.com/?ref=su-rmv-ad" target="_blank" title="Upgrade to SEO Ultimate+">Upgrade to SEO Ultimate+</a></p>
+			<a href="https://www.seoultimateplus.com/breaking-news" target="_blank" title="Upgrade to SEO Ultimate+">Upgrade to SEO Ultimate+</a></p>
 			<?php
 		}	
 	}

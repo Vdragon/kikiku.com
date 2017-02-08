@@ -4,8 +4,9 @@
 	if (typeof ajax_url === 'undefined') {
 		ajax_url = '<?php echo admin_url() ?>admin-ajax.php';
 	}
-	var last_site_key = null;
-	var sk_ms_admin   = true;
+	var last_site_key  = null;
+	var sk_ms_admin    = true;
+	var paginationSize = <?php echo $this->sites_per_page ?>;
 
 </script>
 
@@ -51,9 +52,7 @@
 				<div class="well">
 					<h3>Activate Sidekick Account</h3>
 					<p>Please keep this information <b>private</b>.</p>
-					<p>Once active every site create on this multisite installation will have Sidekick automatically activted.</p>
-					<p><b>Important - </b>Only WordPress basics and Enterprise plans are currently supported. <b>Custom Walkthrough</b> plans will be supported in the near future.</p>
-
+					
 					<form method="post">
 						<?php settings_fields('sk_license'); ?>
 						<table class="form-table">
@@ -82,6 +81,9 @@
 											<?php endif ?>
 											<option <?php echo ($sk_selected_library == -1) ? 'SELECTED' : '' ?> value='-1'>WordPress Basics Only</option>
 										</select>
+										<p>
+											Once your library is published, it will appear here for you to distribute.
+										</p>
 									</td>
 								</tr>
 
@@ -90,6 +92,8 @@
 									<th scope="row" valign="top">Enable Auto-Activations</th>
 									<td>
 										<input class='checkbox' type='checkbox' name='sk_auto_activations' <?php echo ($sk_auto_activations) ? 'CHECKED' : '' ?>>
+										<p>Once active, every site created on this multisite installation will have Sidekick automatically activted.</p>
+
 									</td>
 								</tr>
 
@@ -125,7 +129,9 @@
 								<?php endif ?>
 								<tr>
 									<th></th>
-									<td><?php submit_button('Update'); ?></td>
+									<td><?php submit_button('Update'); ?>
+										<p>**Please make sure you click the update button above before activating any network websites below.</p>
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -139,45 +145,26 @@
 				<div class="well">
 					<h3>Sidekick Network Activations</h3>
 
-					<div class='stats'>
-						<div class='active' onclick='load_sites_by_status("active",this)'>
-							<i>></i>
-							<h3>0</h3>
-							<span>Active</span>
-						</div>
-						<div class='unactivated' onclick='load_sites_by_status("unactivated",this)'>
-							<i>></i>
-							<h3>0</h3>
-							<span>Unactivated</span>
-						</div>
-						<div class='deactivated' onclick='load_sites_by_status("deactivated",this)'>
-							<i>></i>
-							<h3>0</h3>
-							<span>Deactivated</span>
-						</div>
-					</div>
-
 					<div class="status">
 
 					</div>
 
-					<h2><span>Loading...</span><button class='activate_all'>Activate All<div class="spinner"></div></button></h2>
-
-					<div class='action'>
-						<div class="pagination">
-							<button class='prev'>Prev</button>
-							<span>Showing <span class="start">1</span>/<span class='end'>1</span></span>
-							<button class='next'>Next</button>
-						</div>
-						<div class="filter">
-							<!-- <input type='text' placeholder='Find'> -->
-						</div>
-					</div>
+					<h2>
+						<button class='activate_all'>Activate All<div class="spinner"></div></button>
+						<?php if ($this->sites_per_page < count($all_sites)): ?>
+							<div class="pagination">
+								<button class='prev'>Prev</button>
+								<button class='next'>Next</button>
+							</div>
+						<?php endif ?>
+					</h2>
 
 					<div class="single_activation_error red"></div>
 
 					<div class="site_list">
-						Loading...
+						<?php foreach ($all_sites as $key => $site): ?>
+							<div class="site <?php if ($key >= $this->sites_per_page): ?>hidden<?php endif ?>" data-path="<?php echo $site->path ?>" data-domain="<?php echo $site->domain ?>" data-blogid="<?php echo $site->blog_id ?>"> <?php echo "{$site->domain}{$site->path}" ?> <button class="checking">Checking Status...<div class="spinner"></div></button></div>
+						<?php endforeach ?>
 					</div>
 
 				</div>

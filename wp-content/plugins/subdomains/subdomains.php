@@ -1,10 +1,9 @@
 <?php
-
 /*
   Plugin Name: Subdomains
   Plugin URI: http://pankajanupam.com/wordpress-plugins/subdomains/
   Description: Use selecttive categories as subdomain
-  Version: 2.0
+  Version: 2.0.1
   Author: BigBrother
   Author URI: http://pankajanupam.com
 

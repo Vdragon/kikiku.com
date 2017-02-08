@@ -849,7 +849,7 @@ class SEO_Ultimate {
 				
 				if ($parent == 'seo' && !$added_main_menu) {
 					//Add the "SEO" menu item!
-					add_utility_page(__('SEO Ultimate', 'seo-ultimate'), __('SEO', 'seo-ultimate').$main_count_code, 'manage_options', 'seo', array(), 'div');
+					add_menu_page(__('SEO Ultimate', 'seo-ultimate'), __('SEO', 'seo-ultimate').$main_count_code, 'manage_options', 'seo', array(), 'div', 2);
 					
 					//Translations and count codes will mess up the admin page hook, so we need to fix it manually.
 					global $admin_page_hooks;
@@ -2087,7 +2087,7 @@ class SEO_Ultimate {
 	*/
 	function su_add_dashboard_widgets() {
 
-	wp_add_dashboard_widget( 'sdf_dashboard_widget', 'From the Creators of SEO Ultimate', array(&$this, 'sdf_dashboard_widget_function') );
+	wp_add_dashboard_widget( 'sdf_dashboard_widget', 'An Important Message about SEO Ultimate', array(&$this, 'sdf_dashboard_widget_function') );
 	
 	// Globalize the metaboxes array, this holds all the widgets for wp-admin
 	global $wp_meta_boxes;

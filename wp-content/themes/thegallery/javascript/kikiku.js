@@ -49,6 +49,7 @@
 				  if(tipTitle && $t.is('a')){
 					  $t.attr('title',tipTitle);
 				  }
+				  tipTitle = '';
 			  };
 		});
 	}

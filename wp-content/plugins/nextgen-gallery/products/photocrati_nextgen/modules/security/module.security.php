@@ -1,11 +1,4 @@
 <?php
-
-/***
- {
-	Module: photocrati-security
- }
- ***/
-
 class M_Security extends C_Base_Module
 {
 	function define()
@@ -14,10 +7,10 @@ class M_Security extends C_Base_Module
 			'photocrati-security',
 			'Security',
 			'Provides utilities to check for credentials and security',
-			'0.2',
-			'http://www.nextgen-gallery.com',
+			'0.3',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 
 		if (isset($GLOBALS['_COOKIE_NG_COPY'])) {

@@ -25,10 +25,10 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
             'photocrati-nextgen_basic_gallery',
             'NextGEN Basic Gallery',
             "Provides NextGEN Gallery's basic thumbnail/slideshow integrated gallery",
-            '0.13',
-            'http://www.nextgen-gallery.com',
+            '0.16',
+            'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Basic_Gallery_Installer');
@@ -80,8 +80,8 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
         }
 
         // Frontend-only components
-        if (!is_admin()) {
-
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+        {
             // Provides the controllers for the display types
             $this->get_registry()->add_adapter(
                 'I_Display_Type_Controller',
@@ -127,7 +127,8 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
     
     function _register_hooks()
 	{
-        if (!is_admin() && ((!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES)))
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
         {
             C_NextGen_Shortcode_Manager::add('random',    array(&$this, 'render_random_images'));
             C_NextGen_Shortcode_Manager::add('recent',    array(&$this, 'render_recent_images'));
@@ -142,6 +143,8 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
         }
 
         add_action('ngg_routes', array(&$this, 'define_routes'));
+
+        add_filter('ngg_atp_show_display_type', array($this, 'atp_show_basic_galleries'), 10, 2);
 	}
 
     function define_routes($router)
@@ -153,6 +156,21 @@ class M_NextGen_Basic_Gallery extends C_Base_Module
         $router->rewrite("{*}{$slug}{*}/show--slide/{*}",   "{1}{$slug}{2}/show--" . NGG_BASIC_SLIDESHOW  . "/{3}");
         $router->rewrite("{*}{$slug}{*}/show--gallery/{*}", "{1}{$slug}{2}/show--" . NGG_BASIC_THUMBNAILS . "/{3}");
         $router->rewrite("{*}{$slug}{*}/page/{\\d}{*}",     "{1}{$slug}{2}/nggpage--{3}{4}");
+    }
+
+    /**
+     * ATP filters display types by not displaying those whose name attribute isn't an active POPE module. This
+     * is a workaround/hack to compensate for basic slideshow & thumbnails sharing a module.
+     *
+     * @param bool $available
+     * @param C_Display_Type $display_type
+     * @return bool
+     */
+    function atp_show_basic_galleries($available, $display_type)
+    {
+        if (in_array($display_type->name, array(NGG_BASIC_THUMBNAILS, NGG_BASIC_SLIDESHOW)))
+            $available = TRUE;
+        return $available;
     }
 
     /**
@@ -324,7 +342,12 @@ class C_NextGen_Basic_Gallery_Installer extends C_Gallery_Display_Installer
 				'entity_types'			=>	array('image'),
 				'preview_image_relpath'	=>	'photocrati-nextgen_basic_gallery#thumb_preview.jpg',
 				'default_source'		=>	'galleries',
-				'view_order' => NGG_DISPLAY_PRIORITY_BASE
+				'view_order'            =>  NGG_DISPLAY_PRIORITY_BASE,
+                'aliases'               =>  array(
+                    'basic_thumbnail',
+                    'basic_thumbnails',
+                    'nextgen_basic_thumbnails',
+                )
 			)
 		);
 
@@ -334,7 +357,11 @@ class C_NextGen_Basic_Gallery_Installer extends C_Gallery_Display_Installer
 				'entity_types'			=>	array('image'),
 				'preview_image_relpath'	=>	'photocrati-nextgen_basic_gallery#slideshow_preview.jpg',
 				'default_source'		=>	'galleries',
-				'view_order' => NGG_DISPLAY_PRIORITY_BASE + 10
+				'view_order'            => NGG_DISPLAY_PRIORITY_BASE + 10,
+                'aliases'               =>  array(
+                    'basic_slideshow',
+                    'nextgen_basic_slideshow'
+                )
 			)
 		);
 	}

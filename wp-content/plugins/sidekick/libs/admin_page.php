@@ -33,6 +33,36 @@
 
 	<div class="sk_box left">
 		<div class="wrapper_left">
+
+			<?php if (defined('SK_PRODUCT_ID') || defined('SK_SUBSCRIPTION_ID')): ?>
+				<div class="sk_box envato">
+					<div class="well">
+
+						<h3>Envato Activation</h3>
+						<form method="post">
+							<p>
+								Hey! You've received SIDEKICK as a part of your ThemeForest purchase! To activate SIDEKICK please enter your item purchase code below (this can be found under "Downloads" in your ThemeForest account).
+							</p>
+							<table class='form-table'>
+								<tbody>
+									<tr>
+										<th>
+											Item Purchase Code
+										</th>
+										<td>
+											<input type="text" name="sk_envato_item_purchase_code" class='regular-text' value="<?php echo get_option('sk_envato_item_purchase_code') ?>">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<?php submit_button('Activate'); ?>
+							<?php wp_nonce_field( 'activate_envato', 'activate_envato_once' ); ?>
+						</form>
+					</div>
+				</div>
+			<?php endif; ?>
+
+
 			<div class="sk_box license">
 				<div class="well">
 					<?php if (!$error): ?>
@@ -56,7 +86,7 @@
 
 									<tr valign="top">
 										<th scope="row" valign="top">Status</th>
-										<td><span style='color: blue' class='sk_license_status'><span><?php echo ucfirst($status) ?></span>  <a style='display: none' class='sk_upgrade' href='http://www.sidekick.pro/modules/wordpress-core-module-premium/?utm_source=plugin&utm_medium=settings&utm_campaign=upgrade' target="_blank"> Upgrade Now!</a> </span></td>
+										<td><span style='color: blue' class='sk_license_status'><span><?php echo ucfirst($status) ?></span>  <a style='display: none' class='sk_upgrade' href='http://www.sidekick.pro/modules/wordpress-core-module-premium/?utm_source=plugin&utm_medium=settings&utm_campaign=upgrade<?php echo ($affiliate_id) ? '&ref=' . $affiliate_id : '' ?>' target="_blank"> Upgrade Now!</a> </span></td>
 									</tr>
 
 									<tr valign="top">
@@ -81,7 +111,7 @@
 								</tbody>
 							</table>
 							<?php submit_button('Update'); ?>
-							<?php wp_nonce_field( 'update_sk_settings' ); ?>
+							<?php wp_nonce_field( 'update_sk_settings', 'update_sk_settings_once' ); ?>
 						</form>
 					<?php endif ?>
 				</div>
@@ -90,9 +120,9 @@
 			<div class="sk_box composer" style='display: none'>
 				<div class="well">
 					<h3>Build Your Own Walkthroughs</h3>
-					<a href='http://www.sidekick.pro/plans/create_wp_walkthroughs/?utm_source=plugin&utm_medium=settings&utm_campaign=composer' target='_blank'><div class='composer_beta_button'>Build Your Own<br/>Walkthroughs</div></a>
+					<a href='http://www.sidekick.pro/plans/create_wp_walkthroughs/?utm_source=plugin&utm_medium=settings&utm_campaign=composer<?php echo ($affiliate_id) ? '&ref=' . $affiliate_id : '' ?>' target='_blank'><div class='composer_beta_button'>Build Your Own<br/>Walkthroughs</div></a>
 					<ul>
-						<li>Get more info about <a href='http://www.sidekick.pro/how-it-works/?utm_source=plugin&utm_medium=settings&utm_campaign=composer' target='_blank'>Custom Walkthroughs</a> now!</li>
+						<li>Get more info about <a href='http://www.sidekick.pro/how-it-works/?utm_source=plugin&utm_medium=settings&utm_campaign=composer<?php echo ($affiliate_id) ? '&ref=' . $affiliate_id : '' ?>' target='_blank'>Custom Walkthroughs</a> now!</li>
 						<li><a href="http://www.sidekick.pro/plans/create_wp_walkthroughs/?utm_source=plugin&utm_medium=settings&utm_campaign=composer" target="_blank">Check out our custom walkthroughs plans</a></li>
 					</ul>
 				</div>
@@ -107,39 +137,9 @@
 							<li>Your Activation ID is unique and limited to your production, staging, and development urls.</li>
 							<li>The Sidekick team adheres strictly to CANSPAM. From time to time we may send critical updates (such as security notices) to the email address setup as the Administrator on this site.</li>
 							<li>If you have any questions, bug reports or feedback, please send them to <a target="_blank" href="mailto:support@sidekick.pro">us</a> </li>
-							<li>You can find our terms of use <a target="_blank" href="http://www.sidekick.pro/terms-of-use/">here</a></li>
+							<li>You can find our terms of use <a target="_blank" href="http://www.sidekick.pro/terms-of-use/<?php echo ($affiliate_id) ? '&ref=' . $affiliate_id : '' ?>">here</a></li>
 						</ul>
 					</div>
-				</div>
-			</div>
-
-			<div class="sk_box advanced">
-				<div class="well">
-					<h3>Advanced</h3>
-					<form method="post">
-						<table class="form-table">
-							<tbody>
-								<tr valign="top">
-									<th scope="row" valign="top">API</th>
-									<td>
-										<select name='sk_api'>
-											<?php if (get_option('sk_api') == 'production'): ?>
-												<option value='production' SELECTED>Production</option>
-												<option value='staging'>Staging</option>
-											<?php else: ?>
-												<option value='production' >Production</option>
-												<option value='staging' SELECTED>Staging</option>
-											<?php endif ?>
-										</select>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-
-						<?php wp_nonce_field( 'update_sk_settings' ); ?>
-						<input class='button button-primary' type='submit' value='Save'/>
-					</form>
-
 				</div>
 			</div>
 
@@ -158,13 +158,10 @@
 						<li>Please help spread the word!</li>
 						<li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sidekick.pro" data-text="I use @sidekickhelps for the fastest and easiest way to learn WordPress." data-via="sidekickhelps" data-size="large">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
 						<li>Like SIDEKICK? Please leave us a 5 star rating on <a href='http://WordPress.org' target='_blank'>WordPress.org</a></li>
-						<li><a href="http://www.sidekick.pro/plans/wordpress-basics/">Sign up for a full WordPress Basics package</a></li>
+						<li><a href="http://www.sidekick.pro/plans/wordpress-basics/<?php echo ($affiliate_id) ? '&ref=' . $affiliate_id : '' ?>">Sign up for a full WordPress Basics package</a></li>
 						<li><a href="http://support.sidekick.pro/collection/50-quick-start-guides" target="_blank"><strong>Visit the SIDEKICK Quick Start guides</strong></a>.</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-

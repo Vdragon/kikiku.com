@@ -1,11 +1,4 @@
 <?php
-
-/***
-{
-	Module: photocrati-validation
-}
-***/
-
 class M_Validation extends C_Base_Module
 {
 	function define()
@@ -14,10 +7,10 @@ class M_Validation extends C_Base_Module
 			'photocrati-validation',
 			'Validation',
 			'Provides validation support for objects',
-			'0.1',
-			'http://www.nextgen-gallery.com',
+			'0.2',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 	}
 

@@ -6,6 +6,9 @@ small.expand-hide a.wpu-open-close{
 	color:#868686;
 	line-height: 32px;
 }
+body.su_admin_dashoard {
+	background-color: #fff;
+}
 body#media-upload {
 	margin: 8px;}
 .img-responsive {

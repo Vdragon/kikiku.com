@@ -19,10 +19,10 @@ class M_NextGen_Basic_ImageBrowser extends C_Base_Module
 			'photocrati-nextgen_basic_imagebrowser',
 			'NextGEN Basic ImageBrowser',
 			'Provides the NextGEN Basic ImageBrowser Display Type',
-            '0.10',
-			'http://www.nextgen-gallery.com',
+            '0.13',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Basic_ImageBrowser_Installer');
@@ -68,10 +68,12 @@ class M_NextGen_Basic_ImageBrowser extends C_Base_Module
             );
         }
 
-        if (!is_admin()) {
+		if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+		{
             // Add rendering logic
             $this->get_registry()->add_adapter(
-                'I_Display_Type_Controller', 'A_NextGen_Basic_ImageBrowser_Controller',
+                'I_Display_Type_Controller',
+	            'A_NextGen_Basic_ImageBrowser_Controller',
                 $this->module_id
             );
         }
@@ -79,7 +81,9 @@ class M_NextGen_Basic_ImageBrowser extends C_Base_Module
 
 	function _register_hooks()
 	{
-        if (!is_admin() && ((!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))) {
+		if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
+		{
             C_NextGen_Shortcode_Manager::add('imagebrowser', array(&$this, 'render_shortcode'));
             C_NextGen_Shortcode_Manager::add('nggimagebrowser', array(&$this, 'render_shortcode'));
         }
@@ -175,7 +179,12 @@ class C_NextGen_Basic_ImageBrowser_Installer extends C_Gallery_Display_Installer
 				'entity_types'			=>	array('image'),
 				'preview_image_relpath'	=>	'photocrati-nextgen_basic_imagebrowser#preview.jpg',
 				'default_source'		=>	'galleries',
-				'view_order' => NGG_DISPLAY_PRIORITY_BASE + 20
+				'view_order' 			=> NGG_DISPLAY_PRIORITY_BASE + 20,
+				'aliases'				=> array(
+					'basic_imagebrowser',
+					'imagebrowser',
+					'nextgen_basic_imagebrowser'
+				)
 			)
 		);
 	}

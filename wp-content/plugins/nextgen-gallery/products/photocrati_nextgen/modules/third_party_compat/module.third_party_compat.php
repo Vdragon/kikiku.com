@@ -1,11 +1,4 @@
 <?php
-
-/***
-{
-Module: photocrati-third_party_compat,
-Depends: {}
-}
- ***/
 class M_Third_Party_Compat extends C_Base_Module
 {
     function define()
@@ -14,10 +7,10 @@ class M_Third_Party_Compat extends C_Base_Module
             'photocrati-third_party_compat',
             'Third Party Compatibility',
             "Adds Third party compatibility hacks, adjustments, and modifications",
-            '0.4',
-            'http://www.nextgen-gallery.com',
+            '0.6',
+            'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 
         // the following constants were renamed for 2.0.41; keep them declared for compatibility sake until
@@ -76,6 +69,13 @@ class M_Third_Party_Compat extends C_Base_Module
                 define('NGG_DISABLE_RESOURCE_MANAGER', TRUE);
         }
 
+        // Cornerstone's page builder requires a 'clean slate' of css/js that our resource manager interefers with
+        if (class_exists('Cornerstone'))
+        {
+            if (!defined('NGG_DISABLE_FILTER_THE_CONTENT')) define('NGG_DISABLE_FILTER_THE_CONTENT', TRUE);
+            if (!defined('NGG_DISABLE_RESOURCE_MANAGER'))   define('NGG_DISABLE_RESOURCE_MANAGER', TRUE);
+        }
+
         // Genesis Tabs creates a new query / do_shortcode loop which requires these be set
         if (class_exists('Genesis_Tabs'))
         {
@@ -97,21 +97,22 @@ class M_Third_Party_Compat extends C_Base_Module
         add_action('init', array(&$this, 'flattr'),     PHP_INT_MAX);
         add_action('wp',   array(&$this, 'bjlazyload'), PHP_INT_MAX);
 
+        add_action('admin_init', array($this, 'excellent_themes_admin'), -10);
+
         add_action('plugins_loaded', array(&$this, 'wpml'), PHP_INT_MAX);
         add_action('plugins_loaded', array(&$this, 'wpml_translation_management'), PHP_INT_MAX);
 
         add_filter('headway_gzip', array(&$this, 'headway_gzip'), (PHP_INT_MAX - 1));
         add_filter('ckeditor_external_plugins', array(&$this, 'ckeditor_plugins'), 11);
         add_filter('bp_do_redirect_canonical', array(&$this, 'fix_buddypress_routing'));
-        add_filter('the_content', array(&$this, 'check_weaverii'), -(PHP_INT_MAX-2));
-        add_action('wp', array(&$this, 'check_for_jquery_lightbox'));
-        add_filter('get_the_excerpt', array(&$this, 'disable_galleries_in_excerpts'), 1);
-        add_filter('get_the_excerpt', array(&$this, 'enable_galleries_in_excerpts'), PHP_INT_MAX-1);
-	    add_action('debug_bar_enqueue_scripts', array(&$this, 'no_debug_bar'));
+        add_filter('the_content', array($this, 'check_weaverii'), -(PHP_INT_MAX-2));
+        add_action('wp', array($this, 'check_for_jquery_lightbox'));
+        add_filter('get_the_excerpt', array($this, 'disable_galleries_in_excerpts'), 1);
+        add_filter('get_the_excerpt', array($this, 'enable_galleries_in_excerpts'), PHP_INT_MAX-1);
+	    add_action('debug_bar_enqueue_scripts', array($this, 'no_debug_bar'));
         add_filter('ngg_non_minified_modules', array($this, 'dont_minify_nextgen_pro_cssjs'));
-        add_filter('run_ngg_resource_manager', array(&$this, 'check_woocommerce_download'));
-        add_filter('run_ngg_resource_manager', array(&$this, 'check_wpecommerce_download'));
-        add_filter('run_ngg_resource_manager', array(&$this, 'check_mafs_download'));
+        add_filter('ngg_atp_show_display_type', array($this, 'atp_check_pro_albums'), 10, 2);
+        add_filter('run_ngg_resource_manager', array($this, 'run_ngg_resource_manager'));
 
         // WPML fix
         if (class_exists('SitePress')) {
@@ -125,44 +126,63 @@ class M_Third_Party_Compat extends C_Base_Module
     }
 
     /**
-     * Determine if the requested URL is a Multiverso Advanced File Sharing download and adjust the resource manager
+     * Some other plugins output content and die(); this causes problems with our resource manager which uses output buffering
      *
      * @param bool $valid_request
      * @return bool
      */
-    function check_mafs_download($valid_request = TRUE)
+    function run_ngg_resource_manager($valid_request = TRUE)
     {
+        // WP-Post-To-PDF-Enhanced
+        if (class_exists('wpptopdfenh') && !empty($_GET['format']))
+            $valid_request = FALSE;
+
+        // WP-Photo-Seller download
+        if (class_exists('WPS') && isset($_REQUEST['wps_file_dl']) && $_REQUEST['wps_file_dl'] == '1')
+            $valid_request = FALSE;
+
+        // Multiverso Advanced File Sharing download
         if (function_exists('mv_install') && isset($_GET['upf']) && isset($_GET['id']))
             $valid_request = FALSE;
-        return $valid_request;
-    }
 
-    /**
-     * Determine if the requested URL is a WooCommerce download and adjust the resource manager
-     *
-     * Our resource manager's output buffers conflict with Woo's use of output buffers to handle chunked reading of
-     * large files in WC_Download_Handler::readfile_chunked()
-     * @param bool $valid_request
-     * @return bool
-     */
-    function check_woocommerce_download($valid_request = TRUE)
-    {
+        // WooCommerce downloads
         if (class_exists('WC_Download_Handler') && isset($_GET['download_file']) && isset($_GET['order']) && isset($_GET['email']))
             $valid_request = FALSE;
+
+        // WP-E-Commerce
+        if (isset($_GET['wpsc_download_id']) || (function_exists('wpsc_download_file') && isset($_GET['downloadid'])))
+            $valid_request = FALSE;
+
+        // Easy Digital Downloads
+        if (function_exists('edd_process_download') && (isset($_GET['download_id']) || isset($_GET['download'])))
+            $valid_request = FALSE;
+
         return $valid_request;
     }
 
     /**
-     * Determine if the requested URL is a WPE-Commerce download and adjust the resource manager
-     *
-     * @param bool $valid_request
-     * @return bool
+     * This style causes problems with Excellent Themes admin settings
      */
-    function check_wpecommerce_download($valid_request = TRUE)
+    function excellent_themes_admin()
     {
-        if (function_exists('wpsc_download_file') && isset($_GET['downloadid']))
-            $valid_request = FALSE;
-        return $valid_request;
+        if (is_admin()
+        &&  defined('ET_TAXONOMY_META_OPTION_KEY')
+        &&  (!empty($_GET['page']) && strpos($_GET['page'], 'et_') == 0))
+        {
+            wp_deregister_style('ngg-jquery-ui');
+        }
+    }
+
+    function atp_check_pro_albums($available, $display_type)
+    {
+        if (!defined('NGG_PRO_ALBUMS'))
+            return $available;
+
+        if (in_array($display_type->name, array(NGG_PRO_LIST_ALBUM, NGG_PRO_GRID_ALBUM))
+        &&  $this->get_registry()->is_module_loaded(NGG_PRO_ALBUMS))
+            $available = TRUE;
+
+        return $available;
     }
 
     function no_debug_bar()
