@@ -63,7 +63,7 @@ border-radius: 3px;
 box-shadow: 1px 1px 1px #888;}
 
 /* 首字 .post first-letter */
-.single-content.first-letter:first-letter{font-size:36px;font-weight:bold;font-family:"Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";}
+.single-content.first-letter:first-letter{font-size:36px;font-weight:bold;}
 
 /*sina wei bo xiu*/
 #pl_weibo_show{background: #000;opacity: 0.7;}
