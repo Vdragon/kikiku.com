@@ -300,3 +300,6 @@ div.blog-item-holder .blog-item .blog-thumbnail-comment a{
 	min-width: 17px;
 	display: block;
 }
+div.logo-wrapper a img{
+	height: 70px;
+}
