@@ -243,7 +243,7 @@
 		}
 		
 		if(!empty($google_font_family)){
-			wp_enqueue_style('Google-Font','http://fonts.useso.com/css?family=' . $google_font_family);
+			wp_enqueue_style('Google-Font','http://fonts.googleapis.com/css?family=' . $google_font_family);
 		}
 	
 	}
@@ -261,7 +261,7 @@
 		
 		}else if($all_font[$recieve_font]['type'] == "Google Font"){
 			
-			$font_url = array('type'=>$all_font[$recieve_font]['type'], 'url'=>'http://fonts.useso.com/css?family=' . str_replace(' ', '+' , $recieve_font));	
+			$font_url = array('type'=>$all_font[$recieve_font]['type'], 'url'=>'http://fonts.googleapis.com/css?family=' . str_replace(' ', '+' , $recieve_font));
 		
 		}else{
 		
