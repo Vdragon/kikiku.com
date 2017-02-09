@@ -303,7 +303,7 @@ div.blog-item-holder .blog-item .blog-thumbnail-comment a{
 div.logo-wrapper a img{
 	height: 70px;
 }
-/*强制使用白色主题*/
+/*使用白色主题*/
 #livetip{
 	background-color: #ffffff !important;
 	color: #999999 !important;
