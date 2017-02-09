@@ -168,7 +168,7 @@ div.custom-sidebar .recent-post-widget-comment-num{
 	font-style: normal;
 }
 div.custom-sidebar form #search-text input[type="text"]{
-	/*background-color: #FFFFFF !important;*/
+	background-color: transparent;
     border-color: #00b8b8;
 }
 div.comment-wrapper #respond{
