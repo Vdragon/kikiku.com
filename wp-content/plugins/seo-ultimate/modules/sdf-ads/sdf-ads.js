@@ -8,23 +8,18 @@ jQuery(document).ready(function($) {
 	var sds_promo_blog_post = $('#sds_promo_blog_post').html();
 	var banners_remote = ({
 "banners": [
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-1.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb1"},
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-2.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb2"},
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-3.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb3"},
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-4.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb4"},
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-5.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb5"},
-{"banner_img":"SEO-Ultimate-Dashboard-Bannner-6.jpg", "banner_link":"https://seoultimateplus.com/?ref=su-sb6"},
-{"banner_img":"InternalLinkBanner.jpg", "banner_link":"https://seodesignframework.leadpages.net/internal-links/"},
-{"banner_img":"MetaWritingBanner.jpg", "banner_link":"https://seodesignframework.leadpages.net/meta-titles-descriptions/"}
+{"banner_img":"seoultimateplus_300x250_set13.jpg", "banner_link":"https://www.seoultimateplus.com/breaking-news"},
+{"banner_img":"seoultimateplus_300x600_set13.jpg", "banner_link":"https://www.seoultimateplus.com/breaking-news"},
+{"banner_img":"seoultimateplus_300x250_set14.jpg", "banner_link":"https://www.seoultimateplus.com/breaking-news"},
+{"banner_img":"seoultimateplus_300x600_set14.jpg", "banner_link":"https://www.seoultimateplus.com/breaking-news"},
+{"banner_img":"seoultimateplus_300x250_set3.jpg", "banner_link":"https://www.seoultimateplus.com/breaking-news"}
 ],
 "slides": [
 {"slide_cap":"<h3>Download Jeffrey’s Brain</h3><p>Get Equipped for Success - Tips from Our Founder. Download: 20 SEO Tips, SEO for Large Websites and the Organic SEO EBook today.</p>", "slide_link":"http://www.seodesignframework.com/ebooks/"},
-{"slide_cap":"<h3>Got Design?</h3><p>Unleash Your Best Design Concepts with Drag-n-Drop Controls that Give You the Power to Implement Complex Designs Quickly and Easily</p>", "slide_link":"http://www.seodesignframework.com/sdf-drag-and-drop-page-builder/"},
-{"slide_cap":"<h3>Silos Made Easy</h3><p>Deploy Perfect Website Silo Architecture Quickly and Easily with the SEO Design Framework.</p>", "slide_link":"http://www.seodesignframework.com/website-silo-architecture/"},
-{"slide_cap":"<h3>What, No Control?</h3><p>Become Master of your Blog with Page-Level Controls that Liberate Designs and Crush Limitations of other Themes and Frameworks.</p>", "slide_link":"http://www.seodesignframework.com/page-level-controls/"}
+{"slide_cap":"<h3>Silos Made Easy</h3><p>Deploy Perfect Website Silo Architecture Quickly and Easily with the SEO Design Framework.</p>", "slide_link":"http://www.seodesignframework.com/website-silo-architecture/"}
 ],
 "dashboard_widget": [
-{"title":"Learn How to Use SEO Ultimate", "content":"<p>Get access to <a rel=\"nofollow\" target=\"_blank\" title=\"SEO Ultimate video training\" href=\"https://seodesignframework.leadpages.net/seo-ultimate-video-training/\">detailed video training</a> covering each module.</p><a rel=\"nofollow\" target=\"_blank\" title=\"SEO Ultimate video training\" href=\"https://seodesignframework.leadpages.net/seo-ultimate-video-training/\"><img src=\"" + suModulesSdfAdsSdfAdsL10n.sdf_banners_url + "SEO-VideoTraining-Banner-v3.jpg\" alt=\"SEO Ultimate video training\" /></a>"}
+{"title":"An Important Message about SEO Ultimate", "content":"<p>Make sure to <a rel=\"nofollow\" target=\"_blank\" title=\"An Important Message about SEO Ultimate\" href=\"https://www.seoultimateplus.com/breaking-news\">watch the video</a> about this update.</p><a rel=\"nofollow\" target=\"_blank\" title=\"An Important Message about SEO Ultimate\" href=\"https://www.seoultimateplus.com/breaking-news\"><img src=\"" + suModulesSdfAdsSdfAdsL10n.sdf_banners_url + "seo-ultimate-wordpress-dashboard.jpg\" alt=\"SEO Ultimate video training\" /></a>"}
 ]
 })
 

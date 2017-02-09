@@ -5,11 +5,11 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
 ?>
 <div
 	class="ngg-galleryoverview<?php if (!intval($ajax_pagination)) echo ' ngg-ajax-pagination-none'; ?>"
-	id="ngg-gallery-<?php esc_attr_e($displayed_gallery_id)?>-<?php esc_attr_e($current_page)?>">
+	id="ngg-gallery-<?php echo esc_attr($displayed_gallery_id)?>-<?php echo esc_attr($current_page)?>">
 
     <?php if (!empty($slideshow_link)): ?>
 	<div class="slideshowlink">
-        <a href='<?php esc_attr_e($slideshow_link) ?>'><?php echo $slideshow_link_text ?></a>
+        <a href='<?php echo esc_attr($slideshow_link) ?>'><?php echo esc_html($slideshow_link_text) ?></a>
 		
 	</div>
 	<?php endif ?>
@@ -55,7 +55,7 @@ $this->start_element('nextgen_gallery.gallery_container', 'container', $displaye
                     src="<?php echo esc_attr($storage->get_image_url($image, $thumbnail_size_name, TRUE))?>"
                     width="<?php echo esc_attr($thumb_size['width'])?>"
                     height="<?php echo esc_attr($thumb_size['height'])?>"
-                    style="max-width:none;"
+                    style="max-width:100%;"
                 />
             </a>
         </div>

@@ -113,6 +113,16 @@ function su_esc_html($str) {
 }
 
 /**
+ * Adds one or more classes to the body tag in the dashboard.
+ *
+ * @param  String $classes Current body classes.
+ * @return String          Altered body classes.
+ */
+function su_add_admin_body_class( $classes ) {
+    return "$classes su_admin_dashoard";
+}
+
+/**
  * Escapes HTML. Double-encodes existing entities (ideal for editable HTML).
  * 
  * @since 1.5

@@ -3,7 +3,7 @@ Contributors: xiaoxu125634
 Donate link: http://www.brunoxu.com/simple-lazyload.html
 Tags: simple-lazyload, lazy load, lazyload, images lazy load, images, lazy loading, optimize, performance, bandwidth
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.5.2
 Stable tag: trunk
 
 Lazy load all images without configurations. It helps to decrease number of requests and improve page loading time.
@@ -15,13 +15,13 @@ Lazy loading makes your site load faster and saves bandwidth.
 
 This plugin replaces all images with a placeholder and loads the content as it gets close to enter the browser window when the visitor scrolls the page.
 
-Besides lazy load, if you also need lightbox effect or gallery slideshow effect for images, better to use <a href="http://www.brunoxu.com/images-lazyload-and-slideshow.html" target="_blank">Images Lazyload and Slideshow</a> instead.
+Besides lazy load, if you also need lightbox effect or gallery slideshow effect for images, better to use <a href="http://www.brunoxu.com/images-lazyload-and-slideshow.html" target="_blank">Images Lazyload and Slideshow</a> instead. [Download Images Lazyload and Slideshow](https://wordpress.org/plugins/images-lazyload-and-slideshow/).
 
 迟加载可以提高网站的加载速度，节约带宽。
 
 插件用占位图来替换所有图片，当用户滚动窗口将要看到图片时才加载图片的真实内容。
 
-如果你同时也需要图片弹出放大浏览效果或者相册滑动浏览效果，可以选择另一个插件 <a href="http://www.brunoxu.com/images-lazyload-and-slideshow.html" target="_blank">Images Lazyload and Slideshow</a> 看看。
+如果你同时也需要图片弹出放大浏览效果或者相册滑动浏览效果，可以选择另一个插件 <a href="http://www.brunoxu.com/images-lazyload-and-slideshow.html" target="_blank">Images Lazyload and Slideshow</a> 看看。 [下载Images Lazyload and Slideshow](https://wordpress.org/plugins/images-lazyload-and-slideshow/)。
 
 
 == Installation ==
@@ -45,6 +45,11 @@ Still Not Working, Leave a message to me in   http://www.brunoxu.com/simple-lazy
 
 
 == Changelog ==
+
+= 2.8 =
+* 2016-06-16
+* upgrade: fix compatibility with imgs with srcset attribute, feature start from WordPress 4.4.
+* upgrade: optimize lazyload process, use `$(document).trigger("lazyimgs")` to update cached lazyimgs.
 
 = 2.7 =
 * 2014-10-16

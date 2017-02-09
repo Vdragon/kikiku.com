@@ -1,8 +1,8 @@
 === Subdomains ===
-Contributors: pankajanupam
+Contributors: pankajanupam, shivanigupta02
 Tags: subdomains, categories, subdomain
 Requires at least: 2.8
-Tested up to: 4.1
+Tested up to: 4.4
 
 Subdomains allows users to setup there main categories as subdomains. It's a lite and fast code.
 
@@ -11,6 +11,7 @@ Subdomains allows users to setup there main categories as subdomains. It's a lit
 Subdomains allows users to setup there main categories as subdomains. It's a lite and fast code that setup all main categories as subdomains.
 
 Please leave a commment at http://pankajanupam.in/wordpress-plugins/subdomains/ for any issue & help me to improve the plugin.
+
 I will reply within 4 hours.
 
 Note: Please set permalinks to /%postname%/
@@ -63,6 +64,12 @@ I hope it helps …
 None
 
 == Changelog ==
+=2.0.1=
+Update support tag
+
+=2.0.0=
+tested with wordpress > 4.0
+
 =1.0.5=
 Fix paging issue
 
@@ -90,9 +97,6 @@ add custom taxonomy support
 = 0.3 =
 remove double backslash issue
 add child categories support
-
-= 0.2 =
-add tags support
 
 = 0.1 =
 Beta Release

@@ -17,10 +17,10 @@ class M_Dynamic_Stylesheet extends C_Base_Module
 			'photocrati-dynamic_stylesheet',
 			'Dynamic Stylesheet',
 			'Provides the ability to generate and enqueue a dynamic stylesheet',
-			'0.3',
-			'http://www.nextgen-gallery.com',
+			'0.4',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com',
+			'https://www.imagely.com',
 			$context
 		);
 

@@ -16,10 +16,10 @@ class M_NextGen_Other_Options extends C_Base_Module
 			'photocrati-nextgen_other_options',
 			'Other Options',
 			'NextGEN Gallery Others Options Page',
-			'0.8',
-			'http://www.nextgen-gallery.com',
+			'0.9',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 	}
 

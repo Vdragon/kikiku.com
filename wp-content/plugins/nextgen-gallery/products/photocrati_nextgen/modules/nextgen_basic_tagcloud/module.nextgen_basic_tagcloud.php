@@ -17,10 +17,10 @@ class M_NextGen_Basic_Tagcloud extends C_Base_Module
 			NGG_BASIC_TAGCLOUD,
             'NextGen Basic Tagcloud',
             'Provides a tagcloud for NextGEN Gallery',
-            '0.11',
-            'http://www.photocrati.com',
+            '0.15',
+            'https://www.imagely.com',
             'Photocrati Media',
-            'http://www.photocrati.com'
+            'https://www.imagely.com'
         );
 
 		C_Photocrati_Installer::add_handler($this->module_id, 'C_NextGen_Basic_Tagcloud_Installer');
@@ -40,7 +40,8 @@ class M_NextGen_Basic_Tagcloud extends C_Base_Module
 
     function _register_utilities()
     {
-        if (!is_admin()) $this->get_registry()->add_utility('I_Taxonomy_Controller', 'C_Taxonomy_Controller');
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+            $this->get_registry()->add_utility('I_Taxonomy_Controller', 'C_Taxonomy_Controller');
     }
 
     function _register_adapters()
@@ -67,7 +68,8 @@ class M_NextGen_Basic_Tagcloud extends C_Base_Module
             );
         }
 
-        if (!is_admin()) {
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id))
+        {
             // Provides settings fields and frontend rendering
             $this->get_registry()->add_adapter(
                 'I_Display_Type_Controller',
@@ -85,7 +87,9 @@ class M_NextGen_Basic_Tagcloud extends C_Base_Module
 
 	function _register_hooks()
 	{
-        if (!is_admin() && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES)) {
+        if (apply_filters('ngg_load_frontend_logic', TRUE, $this->module_id)
+        && (!defined('NGG_DISABLE_LEGACY_SHORTCODES') || !NGG_DISABLE_LEGACY_SHORTCODES))
+        {
             C_NextGen_Shortcode_Manager::add('tagcloud', array(&$this, 'render_shortcode'));
             C_NextGen_Shortcode_Manager::add('nggtagcloud', array(&$this, 'render_shortcode'));
 
@@ -164,7 +168,12 @@ class C_NextGen_Basic_Tagcloud_Installer extends C_Gallery_Display_Installer
 				'entity_types'			=>	array('image'),
 				'preview_image_relpath'	=>	'photocrati-nextgen_basic_tagcloud#preview.gif',
 				'default_source'		=>	'tags',
-				'view_order' => NGG_DISPLAY_PRIORITY_BASE + 100
+				'view_order'            => NGG_DISPLAY_PRIORITY_BASE + 100,
+                'aliases'               => array(
+                    'basic_tagcloud',
+                    'tagcloud',
+                    'nextgen_basic_tagcloud'
+                )
 			)
 
 		);

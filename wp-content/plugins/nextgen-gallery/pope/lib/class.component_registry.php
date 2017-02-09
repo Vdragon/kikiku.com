@@ -101,7 +101,7 @@ class C_Component_Registry
 		    $this->mark_as_searched_path($path);
 	    }
 
-	    if ($load_all) $this->load_all_modules();
+	    if ($load_all) $this->load_all_modules(NULL, $path);
     }
 
 
@@ -183,7 +183,7 @@ class C_Component_Registry
 	    return $retval;
     }
 
-    function load_all_modules($type = null)
+    function load_all_modules($type=NULL, $dir=NULL)
     {
         $modules = $this->get_known_module_list();
         $ret = true;
@@ -191,7 +191,8 @@ class C_Component_Registry
         foreach ($modules as $module_id)
         {
             if ($type == null || $this->get_module_meta($module_id, 'type') == $type) {
-                $ret = $this->load_module($module_id) && $ret;
+                if ($dir == NULL || strpos($this->get_module_dir($module_id), $dir) !== FALSE)
+	                $ret = $this->load_module($module_id) && $ret;
             }
         }
 
@@ -318,100 +319,102 @@ class C_Component_Registry
 
     /**
      * Retrieves a list of instantiated module ids, in their "loaded" order as defined by a product
+     *
      * @return array
      */
-    function get_module_list($for_product_id=FALSE)
-    {
-	    $retval = $module_list = array();
+	function get_module_list($for_product_id=FALSE)
+	{
+		$retval = $module_list = array();
 		// As of May 1, 2015, there's a new standard. A product will provide get_provided_modules() and get_modules_to_load().
 
-        // As of Feb 10, 2015, there's no standard way across Pope products to an "ordered" list of modules
-        // that the product provides.
-        //
-        // The "standard" going forward will insist that all Product classes will provide either:
-        // A) a static property called "modules"
-        // B) an instance method called "define_modules", which returns a list of modules, and as well, sets
-        //    a static property called "modules'.
-        //
-        // IMPORTANT!
-        // The Photocrati Theme, as of version 4.1.8, doesn't follow this standard. But both NextGEN Pro and Plus do.
+		// As of Feb 10, 2015, there's no standard way across Pope products to an "ordered" list of modules
+		// that the product provides.
+		//
+		// The "standard" going forward will insist that all Product classes will provide either:
+		// A) a static property called "modules"
+		// B) an instance method called "define_modules", which returns a list of modules, and as well, sets
+		//    a static property called "modules'.
+		//
+		// IMPORTANT!
+		// The Photocrati Theme, as of version 4.1.8, doesn't follow this standard. But both NextGEN Pro and Plus do.
 
-        // Following the standard above, collect all modules provided by a product
-        $problematic_product_id = FALSE;
-        foreach ($this->get_product_list() as $product_id) {
+		// Following the standard above, collect all modules provided by a product
+		$problematic_product_id = FALSE;
+		foreach ($this->get_product_list() as $product_id) {
+			$modules = array();
 
-            // Try getting the list of modules using the "standard" described above
-            $obj = $this->get_product($product_id);
-            try{
-                $klass = new ReflectionClass($obj);
-	            if ($klass->hasMethod('get_modules_to_load')) {
-		            $modules = $obj->get_modules_to_load();
-	            }
-	            elseif ($klass->hasProperty('modules')) {
-		            $modules = $klass->getStaticPropertyValue('modules');
-	            }
+			// Try getting the list of modules using the "standard" described above
+			$obj = $this->get_product($product_id);
+			try{
+				$klass = new ReflectionClass($obj);
+				if ($klass->hasMethod('get_modules_to_load')) {
+					$modules = $obj->get_modules_provided();
+				}
+				elseif ($klass->hasProperty('modules')) {
+					$modules = $klass->getStaticPropertyValue('modules');
+				}
 
-                if (!$modules && $klass->hasMethod('define_modules')) {
-	                $modules = $obj->define_modules();
-	                if ($klass->hasProperty('modules')) {
-		                $modules = $klass->getStaticPropertyValue('modules');
-	                }
-                }
+				if (!$modules && $klass->hasMethod('define_modules')) {
+					$modules = $obj->define_modules();
+					if ($klass->hasProperty('modules')) {
+						$modules = $klass->getStaticPropertyValue('modules');
+					}
+				}
+			}
 
-                $module_list[$product_id] = $modules;
-            }
+				// We've encountered a product that doesn't follow the standard. For these exceptions, we'll have to
+				// make an educated guess - if the module path is in the product's default module path, we know that
+				// it belongs to the product
+			catch (ReflectionException $ex) {
+				$modules = array();
+			}
 
-            // We've encountered a product that doesn't follow the standard. For these exceptions, we'll have to
-            // make an educated guess - if the module path is in the product's default module path, we know that
-            // it belongs to the product
-            catch (ReflectionException $ex) {
-                $product_path = $this->get_product_module_path($product_id);
-                $modules = array();
-                foreach ($this->_modules as $module_id => $module) {
-                    if (strpos($this->get_module_path($module_id), $product_path) !== FALSE) {
-                        $modules[] = $module_id;
-                    }
-                }
-                $module_list[$product_id] = $modules;
+			if (!$modules) {
+				$product_path = $this->get_product_module_path($product_id);
+				foreach ($this->_modules as $module_id => $module) {
+					if (strpos($this->get_module_path($module_id), $product_path) !== FALSE) {
+						$modules[] = $module_id;
+					}
+				}
+				if (!$modules) $problematic_product_id = $product_id;
+			}
 
-                // Did our educated guess work?
-                if (!$modules) $problematic_product_id = $product_id;
-            }
-        }
+			$module_list[$product_id] = $modules;
+		}
 
-        // If we have a problematic product, that is, one that we can't find it's ordered list of modules
-        // that it provides, then we have one last fallback: get a list of modules that Pope is aware of, but hasn't
-        // added to $module_list[$product_id] yet
-        if ($problematic_product_id) {
-            $modules = array();
-            foreach (array_keys($this->_modules) as $module_id) {
-                $assigned = FALSE;
-                foreach (array_keys($module_list) as $product_id) {
-                    if (in_array($module_id, $module_list[$product_id])) {
-                        $assigned =TRUE;
-                        break;
-                    }
-                }
-                if (!$assigned) $modules[] = $module_id;
-            }
-            $module_list[$problematic_product_id] = $modules;
-        }
+		// If we have a problematic product, that is, one that we can't find it's ordered list of modules
+		// that it provides, then we have one last fallback: get a list of modules that Pope is aware of, but hasn't
+		// added to $module_list[$product_id] yet
+		if ($problematic_product_id) {
+			$modules = array();
+			foreach (array_keys($this->_modules) as $module_id) {
+				$assigned = FALSE;
+				foreach (array_keys($module_list) as $product_id) {
+					if (in_array($module_id, $module_list[$product_id])) {
+						$assigned =TRUE;
+						break;
+					}
+				}
+				if (!$assigned) $modules[] = $module_id;
+			}
+			$module_list[$problematic_product_id] = $modules;
+		}
 
-        // Now that we know which products provide which modules, we can serve the request.
-        if (!$for_product_id) {
-            foreach (array_values($module_list) as $modules) {
-                $retval = array_merge($retval, $modules);
-            }
-        }
-        else $retval = $module_list[$for_product_id];
+		// Now that we know which products provide which modules, we can serve the request.
+		if (!$for_product_id) {
+			foreach (array_values($module_list) as $modules) {
+				$retval = array_merge($retval, $modules);
+			}
+		}
+		else $retval = $module_list[$for_product_id];
 
-        // Final fallback...if all else fails, just return the list of all modules
-        // that Pope is aware of
-        if (!$retval) $retval = array_keys($this->_modules);
+		// Final fallback...if all else fails, just return the list of all modules
+		// that Pope is aware of
+		if (!$retval) $retval = array_keys($this->_modules);
 
 
-        return $retval;
-    }
+		return $retval;
+	}
 
 	function get_loaded_module_list()
 	{
@@ -784,42 +787,45 @@ class C_Component_Registry
 	{
 		$retval = array();
 		static $recursive_level = 0;
+        static $exclusions = array('..', '.', 'error_log', 'README', 'CHANGELOG', 'readme.txt', 'changelog.txt');
 		$recursive_level++;
 
 		$abspath = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $abspath);
-		$contents = @scandir($abspath);
-		if ($contents) foreach ($contents as $filename) {
-			if ($filename == '.' || $filename == '..') continue;
-			$filename_abspath = $abspath.DIRECTORY_SEPARATOR.$filename;
+		if (!in_array($abspath, $exclusions)) {
+            $contents = @scandir($abspath);
+            if ($contents) foreach ($contents as $filename) {
+                if (in_array($filename, $exclusions)) continue;
+                $filename_abspath = $abspath.DIRECTORY_SEPARATOR.$filename;
 
-			// Is this a subdirectory?
-			// We don't use is_dir(), as it's less efficient than just checking for a 'dot' in the filename.
-			// The problem is that we're assuming that our directories won't contain a 'dot'.
-			if ($recursive && strpos($filename, '.') === FALSE) {
+                // Is this a subdirectory?
+                // We don't use is_dir(), as it's less efficient than just checking for a 'dot' in the filename.
+                // The problem is that we're assuming that our directories won't contain a 'dot'.
+                if ($recursive && strpos($filename, '.') === FALSE) {
 
-				// The recursive parameter can either be set to TRUE or the number of levels to navigate
-				// If we reach the max number of recursive levels we're supported to navigate, then we try
-				// to guess if there's a module or product file under the directory with the same name as
-				// the directory
-				if ($recursive === TRUE || (is_int($recursive) && $recursive_level <= $recursive)) {
-					$retval = array_merge($retval, $this->find_product_and_module_files($filename_abspath, $recursive));
-				}
+                    // The recursive parameter can either be set to TRUE or the number of levels to navigate
+                    // If we reach the max number of recursive levels we're supported to navigate, then we try
+                    // to guess if there's a module or product file under the directory with the same name as
+                    // the directory
+                    if ($recursive === TRUE || (is_int($recursive) && $recursive_level <= $recursive)) {
+                        $retval = array_merge($retval, $this->find_product_and_module_files($filename_abspath, $recursive));
+                    }
 
-				elseif (@file_exists(($module_abspath = $filename_abspath.DIRECTORY_SEPARATOR.'module.'.$filename.'.php'))) {
-					$filename = 'module.'.$filename.'.php';
-					$filename_abspath = $module_abspath;
-				}
-				elseif (@file_exists(($product_abspath = $filename_abspath.DIRECTORY_SEPARATOR.'product.'.$filename.'.php'))) {
-					$filename = 'product.'.$filename.'.php';
-					$filename_abspath = $module_abspath;
-				}
+                    elseif (@file_exists(($module_abspath = $filename_abspath.DIRECTORY_SEPARATOR.'module.'.$filename.'.php'))) {
+                        $filename = 'module.'.$filename.'.php';
+                        $filename_abspath = $module_abspath;
+                    }
+                    elseif (@file_exists(($product_abspath = $filename_abspath.DIRECTORY_SEPARATOR.'product.'.$filename.'.php'))) {
+                        $filename = 'product.'.$filename.'.php';
+                        $filename_abspath = $module_abspath;
+                    }
 
-			}
+                }
 
- 			if ((strpos($filename, 'module.') === 0 OR strpos($filename, 'product.') === 0) AND !$this->is_blacklisted($filename)) {
-                $retval[] = $filename_abspath;
+                if ((strpos($filename, 'module.') === 0 OR strpos($filename, 'product.') === 0) AND !$this->is_blacklisted($filename)) {
+                    $retval[] = $filename_abspath;
+                }
             }
-		}
+        }
 
 		$this->mark_as_searched_path($abspath);
 

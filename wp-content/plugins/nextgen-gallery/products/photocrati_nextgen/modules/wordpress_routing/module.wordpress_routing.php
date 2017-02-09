@@ -1,11 +1,5 @@
 <?php
 
-/***
- {
-	Module: photocrati-wordpress_routing,
-	Depends: { photocrati-router }
- }
- ***/
 class M_WordPress_Routing extends C_Base_Module
 {
 	static $_use_canonical_redirect = TRUE;
@@ -17,10 +11,10 @@ class M_WordPress_Routing extends C_Base_Module
 			'photocrati-wordpress_routing',
 			'WordPress Routing',
 			"Integrates the MVC module's routing implementation with WordPress",
-			'0.6',
-			'http://www.nextgen-gallery.com',
+			'0.8',
+			'https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/',
 			'Photocrati Media',
-			'http://www.photocrati.com'
+			'https://www.imagely.com'
 		);
 	}
 
