@@ -78,8 +78,7 @@ if ( ( ! is_user_logged_in() ) && ( class_exists('ReallySimpleCaptcha') ) ) {
 	// Generate CAPTCHA image
 	$cbnet_comment_captcha_image_name = $cbnet_comment_captcha->generate_image($cbnet_comment_captcha_prefix, $cbnet_comment_captcha_word);
 	// Define values for comment form CAPTCHA fields
-	//$cbnet_comment_captcha_image_url =  GOODLAYERS_PATH . '/include/plugin/really-simple-captcha/tmp/';
-    $cbnet_comment_captcha_image_url =  ABSPATH . 'tmp/';
+	$cbnet_comment_captcha_image_url =  GOODLAYERS_PATH . '/include/plugin/really-simple-captcha/tmp/';
 	$cbnet_comment_captcha_image_src = $cbnet_comment_captcha_image_url . $cbnet_comment_captcha_image_name;
 	$cbnet_comment_captcha_image_width = $cbnet_comment_captcha->img_size[0];
 	$cbnet_comment_captcha_image_height = $cbnet_comment_captcha->img_size[1];
@@ -94,7 +93,7 @@ if ( ( ! is_user_logged_in() ) && ( class_exists('ReallySimpleCaptcha') ) ) {
 		<span class="required">*</span>
 		<div class="clear"></div>
 	</p>
-<?php 
+<?php
 	}
 }
 add_action( 'comment_form_after_fields' , 'cbnet_comment_captcha' );
