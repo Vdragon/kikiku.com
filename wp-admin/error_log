@@ -2,3 +2,6 @@
 [07-Feb-2017 09:41:48 UTC] PHP Fatal error:  Class 'BWP_Enqueued_Detector' not found in /home/kuuren/public_html/wp-content/plugins/bwp-minify/includes/class-bwp-minify.php on line 328
 [07-Feb-2017 09:41:49 UTC] PHP Fatal error:  Class 'BWP_Enqueued_Detector' not found in /home/kuuren/public_html/wp-content/plugins/bwp-minify/includes/class-bwp-minify.php on line 328
 [08-Feb-2017 10:22:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/kuuren/public_html/wp-content/plugins/wp-optimize/wp-optimize-main.php on line 339
+[20-Feb-2017 02:51:02 UTC] PHP Fatal error:  Cannot redeclare default_avatar() (previously declared in /home/kuuren/public_html/wp-content/themes/thegallery-child/functions.php:19) in /home/kuuren/public_html/wp-content/plugins/Default-avatar/Default-avatar.php on line 18
+[20-Feb-2017 02:51:06 UTC] PHP Fatal error:  Cannot redeclare default_avatar() (previously declared in /home/kuuren/public_html/wp-content/themes/thegallery-child/functions.php:19) in /home/kuuren/public_html/wp-content/plugins/Default-avatar/Default-avatar.php on line 18
+[20-Feb-2017 02:51:06 UTC] PHP Fatal error:  Cannot redeclare default_avatar() (previously declared in /home/kuuren/public_html/wp-content/themes/thegallery-child/functions.php:19) in /home/kuuren/public_html/wp-content/plugins/Default-avatar/Default-avatar.php on line 18
