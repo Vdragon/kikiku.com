@@ -42,7 +42,7 @@
 								<span class="comment-date post-info-color"><?php echo get_comment_date();?></span>
 								<span class="comment-date post-info-color"> at <?php echo get_comment_time();?></span>
 								<span class="comment-reply">
-									<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+									<?php comment_reply_link( array_merge( $args, array('reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 								</span> 
 							</div>
 							<div class="comment-content"><?php echo comment_text(); ?></div>
