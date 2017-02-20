@@ -2,7 +2,7 @@
 /*
 Plugin Name:Notice-for-lmee  
 Plugin URI:http://lmee.net
-Description:设置自定义的头像  
+Description:设置自定义的公告
 Version:1.0  
 Author:叶子
 Author URI:http://lmee.net
