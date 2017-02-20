@@ -482,7 +482,7 @@ function clcs_print_smilies($comment_textarea = 'comment', $return = true) {
         $html .= '</span> <span id="wp-smiley-toggle"><a href="javascript:moreSmilies()">more&nbsp;&raquo;</a></span>';
     }
     $html .= '</div>';
-    if ($return) {var_dump(222, $html);
+    if ($return) {
         return $html;
     }
     echo $html;
@@ -491,11 +491,11 @@ function clcs_print_smilies($comment_textarea = 'comment', $return = true) {
 
 function cs_print_smilies() {
 	global $clcs_options;
-	clcs_print_smilies($clcs_options['comment_textarea'], false);
+	return clcs_print_smilies($clcs_options['comment_textarea'], false);
 }
 function cs_print_smilies_return() {
     global $clcs_options;
-    clcs_print_smilies($clcs_options['comment_textarea']);var_dump(1231, clcs_print_smilies($clcs_options['comment_textarea']));
+    return clcs_print_smilies($clcs_options['comment_textarea']);
 }
 
 if (array_key_exists('use_action_comment_form', $clcs_options) && $clcs_options['use_action_comment_form'] == 1) {
