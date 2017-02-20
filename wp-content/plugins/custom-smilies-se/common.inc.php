@@ -493,6 +493,10 @@ function cs_print_smilies() {
 	global $clcs_options;
 	clcs_print_smilies($clcs_options['comment_textarea'], false);
 }
+function cs_print_smilies_return() {
+    global $clcs_options;
+    clcs_print_smilies($clcs_options['comment_textarea']);
+}
 
 if (array_key_exists('use_action_comment_form', $clcs_options) && $clcs_options['use_action_comment_form'] == 1) {
 	add_action('comment_form', 'cs_print_smilies');
