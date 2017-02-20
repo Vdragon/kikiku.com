@@ -396,7 +396,7 @@ function cs_all_smilies() {
 }
 
 // print smilies list @ comment form
-function clcs_print_smilies($comment_textarea = 'comment') {
+function clcs_print_smilies($comment_textarea = 'comment', $return = true) {
 ?>
 
 	<!-- Custom Smilies - Version <?php echo CLCSVER; ?> -->
@@ -462,31 +462,36 @@ function clcs_print_smilies($comment_textarea = 'comment') {
     $smilies = cs_load_existing_smilies();
     $url = clcs_get_smilies_path();
     $list = get_option('cs_list');            
-
+    $html = '<div>';
     if ($list == '') {
 	    foreach ($smilies as $k => $v) {
-	        echo "<img src='{$url}/{$k}' alt='{$v}' onclick='grin(\"{$v}\")' class='wp-smiley-select' /> ";
+            $html .= "<img src='{$url}/{$k}' alt='{$v}' onclick='grin(\"{$v}\")' class='wp-smiley-select' /> ";
 	    }
     } else {
     	$display = explode(',', $list);
     	$smilies = array_flip($smilies);
     	foreach ($display as $v) {
     		$v = trim($v);
-    		echo "<img src='{$url}/{$smilies[$v]}' alt='{$v}' onclick='grin(\"{$v}\")' class='wp-smiley-select' /> ";
+            $html .= "<img src='{$url}/{$smilies[$v]}' alt='{$v}' onclick='grin(\"{$v}\")' class='wp-smiley-select' /> ";
     		unset($smilies[$v]);    		
     	}
-    	echo '<span id="wp-smiley-more" style="display:none">';
+        $html .= '<span id="wp-smiley-more" style="display:none">';
     	foreach ($smilies as $k => $v) {
-    		echo "<img src='{$url}/{$v}' alt='{$k}' onclick='grin(\"{$k}\")' class='wp-smiley-select' /> ";
+            $html .= "<img src='{$url}/{$v}' alt='{$k}' onclick='grin(\"{$k}\")' class='wp-smiley-select' /> ";
     	}
-    	echo '</span> <span id="wp-smiley-toggle"><a href="javascript:moreSmilies()">more&nbsp;&raquo;</a></span>';
+        $html .= '</span> <span id="wp-smiley-toggle"><a href="javascript:moreSmilies()">more&nbsp;&raquo;</a></span>';
     }
+    $html .= '</div>';
+    if ($return) {
+        return $html;
+    }
+    echo $html;
 }
 
 
 function cs_print_smilies() {
 	global $clcs_options;
-	clcs_print_smilies($clcs_options['comment_textarea']);
+	clcs_print_smilies($clcs_options['comment_textarea'], false);
 }
 
 if (array_key_exists('use_action_comment_form', $clcs_options) && $clcs_options['use_action_comment_form'] == 1) {
