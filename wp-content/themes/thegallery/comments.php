@@ -54,7 +54,7 @@
 						'<label for="url">' . __( 'Website', 'gdl_front_end' ) . '</label>' .
 						'<div class="clear"></div>' .
 						'</div><!-- #form-section-url .form-section -->' ) ),
-		'comment_field' => '<div class="comment-form-comment">' . 
+		'comment_field' => '<div class="comment-form-comment">' . cs_print_smilies() .
 					'<textarea id="comment" name="comment" aria-required="true"></textarea>' . 
 					'</div><!-- #form-section-comment .form-section -->',
 		'comment_notes_before' => '',
