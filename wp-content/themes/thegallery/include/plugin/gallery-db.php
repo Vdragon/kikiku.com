@@ -94,7 +94,7 @@
 		$directory = str_replace('\\', '/', $directory);
 		
 		$results = array();
-		$files = scandir( $directory ); 
+		$files = scandir( $directory );
 		
 		foreach( $files as $file ){
 		
