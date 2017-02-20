@@ -60,7 +60,7 @@
 		'comment_notes_before' => '',
 		'comment_notes_after' => '',
 		'title_reply' => $translator_leave_reply,
-	);
+	);var_dump(123, cs_print_smilies_return());
 	comment_form($comment_form, $post->ID);
 	//include(TEMPLATEPATH . '/smiley.php');
 /*
