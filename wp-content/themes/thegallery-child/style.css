@@ -92,7 +92,7 @@ box-shadow: 1px 1px 1px #888;}
 
 /*修改主题为白色*/
 body .single-content, body .blog-thumbnail-context{
-	color: #000000 !important;
+	color: #4e4e4e !important;
 }
 div.gdl-container-overlay{
 	opacity: 0.1 !important;
