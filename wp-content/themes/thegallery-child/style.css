@@ -310,10 +310,10 @@ div.logo-wrapper a img{
 	color: #999999 !important;
 }
 /*使用白色菜单*/
-.sub-menu li {
+#menu-list .sub-menu li {
 	background-color: #ffffff;
 	border-color: none;
 }
-.sub-menu li a {
+#menu-list .sub-menu li a {
 	color: #7a7a7a;
 }
