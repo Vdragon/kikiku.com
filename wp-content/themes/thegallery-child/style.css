@@ -310,9 +310,14 @@ div.logo-wrapper a img{
 	color: #999999 !important;
 }
 /*使用白色菜单*/
+#menu-list ul.sub-menu {
+	background-color: #ffffff !important;
+	border-radius: 3px 3px 3px 3px;
+}
 #menu-list .sub-menu li {
 	background-color: #ffffff !important;
 	border-color: none !important;
+	opacity: 1 !important;
 }
 #menu-list .sub-menu li a {
 	color: #7a7a7a !important;
