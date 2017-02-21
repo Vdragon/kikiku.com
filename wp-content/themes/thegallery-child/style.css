@@ -314,10 +314,11 @@ div.logo-wrapper a img{
 	background-color: #ffffff !important;
 	border-radius: 3px 3px 3px 3px;
 	opacity: 1 !important;
+	border-color: #ccc !important;
 }
 #menu-list .sub-menu li {
 	background-color: #ffffff !important;
-	border-color: none !important;
+	border-color: #ccc !important;
 	opacity: 1 !important;
 }
 #menu-list .sub-menu li a {
