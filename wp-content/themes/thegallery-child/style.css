@@ -311,9 +311,9 @@ div.logo-wrapper a img{
 }
 /*使用白色菜单*/
 #menu-list .sub-menu li {
-	background-color: #ffffff;
-	border-color: none;
+	background-color: #ffffff !important;
+	border-color: none !important;
 }
 #menu-list .sub-menu li a {
-	color: #7a7a7a;
+	color: #7a7a7a !important;
 }
