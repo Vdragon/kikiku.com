@@ -313,6 +313,7 @@ div.logo-wrapper a img{
 #menu-list ul.sub-menu {
 	background-color: #ffffff !important;
 	border-radius: 3px 3px 3px 3px;
+	opacity: 1 !important;
 }
 #menu-list .sub-menu li {
 	background-color: #ffffff !important;
