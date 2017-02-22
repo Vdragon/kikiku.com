@@ -4,8 +4,8 @@ Options -Indexes
 ErrorDocument 400 /404.php
 RewriteEngine On
 RewriteBase /
-RewriteCond %{HTTP_HOST} ^kikiku.com [OR]
-RewriteCond %{HTTP_HOST} ^www.kikiku.com [NC]
+RewriteCond %{HTTP_HOST} ^kikiku\.com [OR]
+RewriteCond %{HTTP_HOST} ^www\.kikiku\.com [NC]
 RewriteRule ^(.*)$ http://www.kuu.ren/$1 [L,R=301]
 </IfModule>
 
