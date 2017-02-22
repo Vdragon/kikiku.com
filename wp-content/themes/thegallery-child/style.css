@@ -221,6 +221,7 @@ text-shadow: 1px 1px 1px #E8E8E8; }
 	font-weight: 900;
 	line-height: 27px;
 	border-left:2px solid #00B8BE;
+	border-top: 1px solid #ececec;
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px #aaa;
 }
