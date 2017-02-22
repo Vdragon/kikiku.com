@@ -1,27 +1,26 @@
-
+<IfModule mod_rewrite.c>
 Options +FollowSymLinks
 Options -Indexes
 ErrorDocument 400 /404.php
-RewriteEngine on
-RewriteBase /
-RewriteCond %{HTTP_HOST} ^(www\.lmee\.1kapp\.com)(:80)? [NC,OR]
-RewriteCond %{HTTP_HOST} ^(lmee\.1kapp\.com)(:80)? [NC,OR]
-RewriteCond %{HTTP_HOST} ^(www\.yezin\.cn)(:80)? [NC]
-RewriteCond %{HTTP_HOST} ^(yezin\.cn)(:80)? [NC]
-RewriteCond %{HTTP_HOST} ^(www\.lmee\.net)(:80)? [NC]
-RewriteCond %{HTTP_HOST} ^(lmee\.net)(:80)? [NC]
-RewriteRule ^(.*) http://www.kikiku.com/$1 [R=301,L]
-DirectoryIndex index.php
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteRule ^index\.php$ - [L]
+RewriteCond %{HTTP_HOST} ^kikiku.com [OR]
+RewriteCond %{HTTP_HOST} ^www.kikiku.com [NC]
+RewriteRule ^(.*)$ http://www.kuu.ren/$1 [L,R=301]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
+# BEGIN WordPress
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteRule ^index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
+#</IfModule>
 # END WordPress
 
 # BEGIN generate_204
