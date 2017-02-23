@@ -53,14 +53,16 @@
 			'name'=>'post-option-author-info-enabled',
 			'type'=>'combobox', 
 			'options'=>array('0'=>'Yes','1'=>'No'),
-			'description'=>'Show the author information in the blog page'),
-			
+			'description'=>'Show the author information in the blog page',
+            'default'=>1),
+
 		"Social Sharing" => array(
 			'title'=> __('SOCIAL NETWORK SHARING', 'gdl_back_office'),
 			'name'=>'post-option-social-enabled',
 			'type'=>'combobox', 
 			'options'=>array('0'=>'Yes','1'=>'No'),
-			'description'=>'Show the social network sharing in the blog page.'),
+			'description'=>'Show the social network sharing in the blog page.',
+            'default'=>1),
 			
 		// thumbnail
 		"Thumbnail Types" => array(
