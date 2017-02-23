@@ -54,7 +54,7 @@
 			'type'=>'combobox', 
 			'options'=>array('0'=>'Yes','1'=>'No'),
 			'description'=>'Show the author information in the blog page',
-            'default'=>1),
+            'default'=>'No'),
 
 		"Social Sharing" => array(
 			'title'=> __('SOCIAL NETWORK SHARING', 'gdl_back_office'),
@@ -62,7 +62,7 @@
 			'type'=>'combobox', 
 			'options'=>array('0'=>'Yes','1'=>'No'),
 			'description'=>'Show the social network sharing in the blog page.',
-            'default'=>1),
+            'default'=>'No'),
 			
 		// thumbnail
 		"Thumbnail Types" => array(
