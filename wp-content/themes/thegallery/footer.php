@@ -53,16 +53,5 @@
 	<?php include ( TEMPLATEPATH."/javascript/supersized.php" ); ?>		
 </script>
 <!-- <script src="<?php echo GOODLAYERS_PATH?>/javascript/kikiku.js"></script> -->
-<!-- baidu tongji-->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?626825384f45d7378739a297c5d44e59";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<!-- baidu tongji-->
 </body>
 </html>

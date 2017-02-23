@@ -76,7 +76,17 @@
 		echo '<link rel="image_src" href="' . $thumbnail[0] . '" />';
 	}
 	?>
-	
+    <!-- baidu tongji-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ec2f5da478675afe02f009a5d1c8e7b1";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!-- baidu tongji-->
 </head>
 <body>
 <div class="body-wrapper">
