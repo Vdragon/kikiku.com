@@ -19,11 +19,11 @@
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
     );
     $host = $_SERVER['HTTP_HOST'];
-    $html = '<ul id="game_list">';
+    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="folat: left">';
     foreach ($gameList as $gVal) {
         $html .= '<li><a href="javascript:;" value="/game/' . $gVal['file'] . '">' . $gVal['name'] . '</a></li>';
     }
-    $html .= '</ul>';
+    $html .= '</ul></div>';
     
     echo $html;
     ?>
@@ -33,6 +33,16 @@
         $('#game_list li a').click(function(){
             showSWF($(this).attr('value'), 'game_swf');
         });
+        $('#game_list span.show_btn').click(
+            var $ul = $(this).closest('#game_list').find('ul');
+            if ($(this).data('value')) {
+                $(this).html('显示').data('value', 0);
+                $ul.fadeOut();
+            } else {
+                $(this).html('隐藏').data('value', 1);
+                $ul.fadeIn();
+            }
+        );
     });
     function showSWF(urlString, elementID){
         var displayContainer = document.getElementById(elementID);
