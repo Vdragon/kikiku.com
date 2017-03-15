@@ -6,6 +6,12 @@
     <meta id="description" name="description" content="game" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <style>
+        #game_list {float: left;}
+        #game_list .show_btn{color: #E91E63; font-size: 13px;}
+        #game_list ul li{font-size: 14px; display: inline;}
+        #game_list ul li a{color: #FF5722;}
+    </style>
 </head>
 <?php
     $gameList = array(
@@ -19,7 +25,7 @@
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
     );
     $host = $_SERVER['HTTP_HOST'];
-    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="float: left; border: 1px solid #ccc;">';
+    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="border: 1px solid #ccc;">';
     foreach ($gameList as $gVal) {
         $html .= '<li><a href="javascript:;" value="/game/' . $gVal['file'] . '">' . $gVal['name'] . '</a></li>';
     }
@@ -33,7 +39,7 @@
         $('#game_list li a').click(function(){
             showSWF($(this).attr('value'), 'game_swf');
         });
-        $('#game_list span.show_btn').click(
+        $('#game_list span.show_btn').click(function(){
             var $ul = $(this).closest('#game_list').find('ul');
             if ($(this).data('value')) {
                 $(this).html('显示').data('value', 0);
@@ -42,7 +48,7 @@
                 $(this).html('隐藏').data('value', 1);
                 $ul.fadeIn();
             }
-        );
+        });
     });
     function showSWF(urlString, elementID){
         var displayContainer = document.getElementById(elementID);
