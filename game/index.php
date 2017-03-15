@@ -38,6 +38,7 @@
 <script>
     $(function(){
         $('#game_list li a').click(function(){
+            $('#game_swf').html('');
             showSWF($(this).attr('value'), 'game_swf');
         });
         $('#game_list span.show_btn').click(function(){
