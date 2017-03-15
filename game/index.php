@@ -8,9 +8,9 @@
     <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <style>
         #game_list {float: left;}
-        #game_list .show_btn{color: #E91E63; font-size: 13px;}
-        #game_list ul li{font-size: 14px; display: inline;}
-        #game_list ul li a{color: #FF5722;}
+        #game_list .show_btn{color: #E91E63; font-size: 13px; cursor: pointer;}
+        #game_list ul li{font-size: 14px; display: inline; padding: 5px;}
+        #game_list ul li a{color: #FF5722; text-decoration: none;}
     </style>
 </head>
 <?php
