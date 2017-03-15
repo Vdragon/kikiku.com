@@ -25,7 +25,7 @@
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
     );
     $host = $_SERVER['HTTP_HOST'];
-    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="border: 1px solid #ccc;">';
+    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul>';
     foreach ($gameList as $gVal) {
         $html .= '<li><a href="javascript:;" value="/game/' . $gVal['file'] . '">' . $gVal['name'] . '</a></li>';
     }
@@ -41,10 +41,15 @@
         });
         $('#game_list span.show_btn').click(function(){
             var $ul = $(this).closest('#game_list').find('ul');
-            if ($(this).data('value')) {
-                $(this).html('显示').data('value', 0);
+            //默认为1(显示中)
+            $(this).data('value') || $(this).data('value', 1);
+            //当前值为1(显示中)，2(隐藏中)
+            if ($(this).data('value') == 1) {
+                //隐藏掉
+                $(this).html('显示').data('value', 2);
                 $ul.fadeOut();
             } else {
+                //显示出来
                 $(this).html('隐藏').data('value', 1);
                 $ul.fadeIn();
             }
