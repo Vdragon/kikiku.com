@@ -19,7 +19,7 @@
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
     );
     $host = $_SERVER['HTTP_HOST'];
-    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="folat: left">';
+    $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul style="float: left; border: 1px solid #ccc;">';
     foreach ($gameList as $gVal) {
         $html .= '<li><a href="javascript:;" value="/game/' . $gVal['file'] . '">' . $gVal['name'] . '</a></li>';
     }
