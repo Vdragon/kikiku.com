@@ -23,6 +23,7 @@
         array('name' => '幻想纹章', 'file' => 'huanxiangwenzhang.swf'),
         array('name' => '超级鸡鸭兄弟', 'file' => 'jiyaxiongdi.swf'),
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
+        array('name' => '黄金矿工', 'file' => 'huangjinkuanggong.swf')
     );
     $host = $_SERVER['HTTP_HOST'];
     $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul>';
