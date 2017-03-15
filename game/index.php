@@ -1,5 +1,10 @@
 <html>
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <title>游戏列表 | Kuu</title>
+    <meta id="mydesc" name="keywords" content="game" />
+    <meta id="description" name="description" content="game" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
 <?php
