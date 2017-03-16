@@ -16,6 +16,10 @@
 <?php
     $gameList = array(
         array('name' => '魂斗罗', 'file' => 'hundouluo.swf'),
+        array('name' => '拳皇wing1.85无敌版', 'file' => 'quanhuangwing1.85wudi.swf'),
+        array('name' => '拳皇wing1.91', 'file' => 'quanhuangwing1.91.swf'),
+        array('name' => '拳皇Wing1.85', 'file' => 'quanhuangwing1.85.swf'),
+        array('name' => '拳皇大战之饿狼来袭无敌版', 'file' => 'quanhuangdazhanelang.swf'),
         array('name' => '塔防', 'file' => 'tafang.swf'),
         array('name' => '屁王兄弟', 'file' => 'piwangxiongdi.swf'),
         array('name' => '变形金刚战记', 'file' => 'bianxingjingang.swf'),
@@ -23,7 +27,8 @@
         array('name' => '幻想纹章', 'file' => 'huanxiangwenzhang.swf'),
         array('name' => '超级鸡鸭兄弟', 'file' => 'jiyaxiongdi.swf'),
         array('name' => '暴击僵尸', 'file' => 'baojijiangshi.swf'),
-        array('name' => '黄金矿工', 'file' => 'huangjinkuanggong.swf')
+        array('name' => '黄金矿工', 'file' => 'huangjinkuanggong.swf'),
+        array('name' => '双截龙', 'file' => 'shuangjielong.swf'),
     );
     $host = $_SERVER['HTTP_HOST'];
     $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul>';
