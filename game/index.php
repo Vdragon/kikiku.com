@@ -49,7 +49,7 @@
 <script>
     $(function(){
         $('#game_list li a').click(function(){
-            if ($(this).data('nofile)) {
+            if ($(this).data('nofile')) {
                 return false;
             }
             $('#game_swf').html('');
