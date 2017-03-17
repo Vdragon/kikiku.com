@@ -16,6 +16,7 @@
 <?php
     $gameList = array(
         array('name' => '魂斗罗', 'file' => 'hundouluo.swf'),
+        array('name' => '拳皇出招表', 'file' => false, 'value' => 'http://www.chuzhaobiao.com/kof/quanhuang97/'),
         array('name' => '拳皇wing1.85无敌版', 'file' => 'quanhuangwing1.85wudi.swf'),
         array('name' => '拳皇wing1.91', 'file' => 'quanhuangwing1.91.swf'),
         array('name' => '拳皇Wing1.85', 'file' => 'quanhuangwing1.85.swf'),
@@ -33,6 +34,11 @@
     $host = $_SERVER['HTTP_HOST'];
     $html = '<div id="game_list"><span class="show_btn">隐藏</span><ul>';
     foreach ($gameList as $gVal) {
+        //是否为非文件模式
+        if (!$gVal['file']) {
+            $html .= '<li><a href="' . $gVal['value'] . '" target="_blank" data-nofile=1>' . $gVal['name'] . '</a></li>';
+            continue;
+        }
         $html .= '<li><a href="javascript:;" value="/game/' . $gVal['file'] . '">' . $gVal['name'] . '</a></li>';
     }
     $html .= '</ul></div>';
@@ -43,6 +49,9 @@
 <script>
     $(function(){
         $('#game_list li a').click(function(){
+            if ($(this).data('nofile)) {
+                return false;
+            }
             $('#game_swf').html('');
             showSWF($(this).attr('value'), 'game_swf');
         });
