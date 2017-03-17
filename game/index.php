@@ -50,7 +50,7 @@
     $(function(){
         $('#game_list li a').click(function(){
             if ($(this).data('nofile')) {
-                return false;
+                return;
             }
             $('#game_swf').html('');
             showSWF($(this).attr('value'), 'game_swf');
