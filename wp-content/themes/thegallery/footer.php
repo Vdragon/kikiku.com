@@ -52,7 +52,6 @@
 	<?php include ( TEMPLATEPATH."/javascript/cufon-replace.php" ); ?>
 	<?php include ( TEMPLATEPATH."/javascript/supersized.php" ); ?>		
 </script>
-<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
     url: document.location.href, 
