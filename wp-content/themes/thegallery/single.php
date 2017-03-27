@@ -148,8 +148,8 @@
 					}
 				
 					echo '<div class="comment-wrapper">';
-					//comments_template(); 
-					echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
+					comments_template(); 
+					//echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
 					echo '</div>';
 					
 					echo "</div>"; // sixteen-columns
