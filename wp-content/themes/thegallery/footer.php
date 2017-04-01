@@ -52,7 +52,8 @@
 	<?php include ( TEMPLATEPATH."/javascript/cufon-replace.php" ); ?>
 	<?php include ( TEMPLATEPATH."/javascript/supersized.php" ); ?>		
 </script>
-<script>
+<!--不使用网易云跟帖，改用微博评论箱了-->
+<!--<script>
   var cloudTieConfig = {
     url: document.location.href, 
     sourceId: "",
@@ -60,7 +61,7 @@
     target: "cloud-tie-wrapper"
   };
 </script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>-->
 <!-- <script src="<?php echo GOODLAYERS_PATH?>/javascript/kikiku.js"></script> -->
 </body>
 </html>
