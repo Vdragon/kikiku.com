@@ -148,8 +148,23 @@
 					}
 				
 					echo '<div class="comment-wrapper">';
-					comments_template(); 
-					//echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
+					//comments_template();
+                    //echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
+                    ?>
+                    <script type="text/javascript">
+                        (function(){
+                            var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&brandline=y&skin=3&ralateuid=2540693375&appkey=1955391457&iframskin=3&dpc=1";
+                            url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
+                            document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
+                        })();
+                    </script>
+                    <script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        window.WBComment.init({
+                            "id": "WBCommentFrame"
+                        });
+                    </script>
+                    <?php
 					echo '</div>';
 					
 					echo "</div>"; // sixteen-columns
