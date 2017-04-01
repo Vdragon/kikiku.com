@@ -154,7 +154,7 @@
                     <script type="text/javascript">
                         (function(){
                             var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&brandline=y&skin=3&ralateuid=2540693375&appkey=1955391457&iframskin=3&dpc=1";
-                            url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
+                            url = url.replace("url=auto", "url=" + "<?php echo the_permalink();?>";//encodeURIComponent(document.URL));
                             document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
                         })();
                     </script>
