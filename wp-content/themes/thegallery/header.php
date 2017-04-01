@@ -1,4 +1,4 @@
-<html xmlns:wb="http://open.weibo.com/wb">
+<!DOCTYPE html xmlns:wb="http://open.weibo.com/wb">
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
