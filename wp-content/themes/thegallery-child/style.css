@@ -223,7 +223,7 @@ text-shadow: 1px 1px 1px #E8E8E8; }
 	border-left:2px solid #00B8BE;
 	border-top: 1px solid #ececec;
 	border-radius: 3px;
-	box-shadow: 1px 1px 1px #aaa;
+	box-shadow: 1px 1px 1px #e1e1e1;
 }
 .single-content h3 + p,
 .single-content h3 + p + p,
