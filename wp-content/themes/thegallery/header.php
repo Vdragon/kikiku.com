@@ -8,6 +8,32 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8" />
+    <?php if (is_single()) {
+        if ($post->post_excerpt) {
+            $description     = $post->post_excerpt;
+        } else {
+            $description = substr(strip_tags($post->post_content),0,220);
+        }
+
+        $keywords = "";
+        $tags = wp_get_post_tags($post->ID);
+        foreach ($tags as $tag ) {
+            $keywords = $keywords . $tag->name . ", ";
+        }
+        $thumbnail_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
+    ?>
+        <meta name="keywords" content="<?=$keywords?>" />
+        <meta name="description" content="<?=$description?>" />
+        <!--必填-->
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo the_permalink();?>" />
+        <meta property="og:title" content="<?php echo the_title();?>" />
+        <meta property="og:description" content="<?php echo $description;?>" />
+        <!--选填-->
+        <meta property="og:image" content="<?php echo $thumbnail_image_url[0];?>" />
+        <meta name="weibo: article:create_at" content="<?php echo the_time('Y-m-d H:i:s');?>" />
+        <meta name="weibo: article:update_at" content="<?php echo the_modified_time('Y-m-d H:i:s');?>" />
+    <?php } ?>
 	<title><?php bloginfo('name'); ?>  <?php wp_title(); ?></title>
 
 	<!--[if lt IE 9]>
