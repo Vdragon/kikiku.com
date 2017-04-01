@@ -327,3 +327,7 @@ div.logo-wrapper a img{
 #menu-list .sub-menu li a {
 	color: #7a7a7a !important;
 }
+/*搜索框有点出去了*/
+div.custom-sidebar #searchsubmit {
+	right: 11px;
+}
