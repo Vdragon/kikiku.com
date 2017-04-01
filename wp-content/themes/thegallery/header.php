@@ -18,7 +18,7 @@
         $keywords = "";
         $tags = wp_get_post_tags($post->ID);
         foreach ($tags as $tag ) {
-            $keywords = $keywords . $tag->name . ", ";
+            $keywords .= ($keywords ? ', ' : '') . $tag->name;
         }
         $thumbnail_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail');
     ?>
