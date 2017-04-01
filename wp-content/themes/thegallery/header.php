@@ -1,4 +1,4 @@
-<!DOCTYPE html xmlns:wb="http://open.weibo.com/wb">
+<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -61,7 +61,6 @@
 		<link rel="stylesheet" href="<?php echo GOODLAYERS_PATH; ?>/highlight/styles/monokai_sublime.css">
 		<script type="text/javascript" src="<?php echo GOODLAYERS_PATH; ?>/highlight/highlight.pack.js"></script>
 		<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-        <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1955391457" type="text/javascript" charset="utf-8"></script>
 	<?php } ?>
 	<!-- Start WP_HEAD
    ================================================== -->

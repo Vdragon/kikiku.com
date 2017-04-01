@@ -151,9 +151,7 @@
 					//comments_template();
                     //echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
                     ?>
-                    <!--<wb:comments url="auto" brandline="y" width="auto" skin="pink" appkey="1955391457" ralateuid="2540693375" ></wb:comments>-->
-                    <wb:comments url="auto" brandline="y" width="auto" skin="pink" appkey="1955391457" ></wb:comments>
-                    <!--<script type="text/javascript">
+                    <script type="text/javascript">
                         (function(){
                             var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&brandline=y&skin=3&ralateuid=2540693375&appkey=1955391457&iframskin=3&dpc=1";
                             url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
@@ -165,7 +163,7 @@
                         window.WBComment.init({
                             "id": "WBCommentFrame"
                         });
-                    </script>-->
+                    </script>
                     <?php
 					echo '</div>';
 					
