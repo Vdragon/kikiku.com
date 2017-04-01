@@ -150,13 +150,13 @@
 					echo '<div class="comment-wrapper">';
 					//comments_template();
                     //echo '<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>';
-                    echo '<wb:comments url="auto" brandline="y" width="auto" skin="pink" appkey="1955391457" ralateuid="2540693375" ></wb:comments>';
+                    //echo '<wb:comments url="auto" brandline="y" width="auto" skin="pink" appkey="1955391457" ralateuid="2540693375" ></wb:comments>';
                     ?>
                     <!--使用命名空间的方法WBML，不使用下边这个了-->
-                    <!--<script type="text/javascript">
+                    <script type="text/javascript">
                         (function(){
                             var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&brandline=y&skin=3&ralateuid=2540693375&appkey=1955391457&iframskin=3&dpc=1";
-                            url = url.replace("url=auto", "url=" + "<?php /*echo the_permalink();*/?>");//encodeURIComponent(document.URL));
+                            url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL));
                             document.write('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
                         })();
                     </script>
@@ -165,7 +165,7 @@
                         window.WBComment.init({
                             "id": "WBCommentFrame"
                         });
-                    </script>-->
+                    </script>
                     <?php
 					echo '</div>';
 					
