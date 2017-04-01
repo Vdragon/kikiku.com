@@ -205,7 +205,7 @@ text-shadow: 1px 1px 1px #E8E8E8; }
 .single-content h3{
 	color: #000000 !important;
 	background: #FFFFFF;
-	box-shadow: 1px 1px 1px #aaa;
+	box-shadow: 1px 1px 1px #e1e1e1;
 	border-left:3px solid #FF3399;
 	border-top: 1px solid #ececec;
 	line-height: 30px;
